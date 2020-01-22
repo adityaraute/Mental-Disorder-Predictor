@@ -1,0 +1,9 @@
+.container{
+    height: 10vh;
+    border-top: 0.5rem solid yellowgreen;
+
+}
+.title{
+    margin: auto;
+    vertical-align: middle;
+}
