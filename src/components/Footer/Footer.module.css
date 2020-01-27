@@ -1,7 +1,11 @@
 .container{
-    height: 10vh;
-    border-top: 0.5rem solid yellowgreen;
-
+    height: 7vh;
+    background-color:  yellowgreen;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: large;
 }
 .title{
     margin: auto;

@@ -4,11 +4,20 @@ import classes from './Navbar.module.css';
 const navbar = () => {
     return (
         <nav className={classes.container}>
-            <ul className={classes.ul_li}>
-                <li>Home</li>
-                <li>Test Page</li>
-                <li>Contact us</li>
-            </ul>
+            <div className={classes.ul_li}>
+                <div>
+                    Logo
+                </div>
+                <div>
+                    <div className={classes.Menudiv}>
+                        <span>Menu 1</span>
+                        <span>Menu 2</span>
+                        <span>Menu 3</span>
+
+                    </div>
+                </div>
+                
+            </div>
         </nav>
     )
 }
