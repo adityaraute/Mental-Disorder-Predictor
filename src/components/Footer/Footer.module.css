@@ -1,9 +1,9 @@
 .container{
     height: 7vh;
-    background-color:  yellowgreen;
+    background-color:  yellow;
+    width: calc(100vw - 1rem);
     position: absolute;
-    bottom: 0;
-    width: 100%;
+    bottom:0;
     padding: 0.5rem;
     font-size: large;
 }

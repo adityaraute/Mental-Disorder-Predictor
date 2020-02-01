@@ -1,10 +1,6 @@
 import React , {Component}from 'react';
-import Login from '../../components/Login/Login';
-import Register from '../../components/Register/Register';
-import classes from './Home.module.css';
 import firebase from '../../Firebase';
-
-class Home extends Component{
+class Login extends Component{
 
     constructor(props){
         super(props);
@@ -12,7 +8,7 @@ class Home extends Component{
         this.db = firebase.firestore();
         console.log(this.db);
         this.state={
-            page: true
+            page: 1
         }
 
     }
@@ -31,23 +27,23 @@ class Home extends Component{
    
     }
 
-    change_mode = () =>{
-        let page = !this.state.page;
-        console.log(this.state, page);
-        
-        this.setState({page : page});
-    }
-
     componentDidMount(){
 
     }
     render(){
         return(
-            <div className={classes.container}>
-                { this.state.page ?  <Login /> : <Register />}
-                <button onClick={this.change_mode}>Change</button>
-            </div>
+            <form onSubmit={this.formSub}>
+                <h5>LOGIN</h5>
+                    <label htmlFor="username">Username</label>
+                    <input type="text" id="username" placeholder="Username" />
+                    <label htmlFor="passwd">Password</label>
+                    <input type="password" id="passwd" placeholder="Password" />
+                    <input type="submit" title="submit"></input>
+                </form>
         );
     }
 }
-export default Home;
+export default Login;
+
+
+
