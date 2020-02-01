@@ -8,36 +8,39 @@ class Login extends Component{
         this.db = firebase.firestore();
         console.log(this.db);
         this.state={
-            page: 1
+            username :'',
+            password :''
+
         }
 
     }
 
     formSub(){
-        console.log("submitted");
-        //this is the error ! 
-        //#lols     
-        let docRef = this.db.collection('users').doc('alovelace');
-        console.log(docRef);
+        console.log("submitted");   
+        let docRef = this.db.collection('users').doc('login');
         docRef.set({
-        first: 'Ada',
-        last: 'Lovelace',
-        born: 1815
+        username: this.state.username,
+        password: this.state.password,
+        born: 1816
         });
    
     }
 
-    componentDidMount(){
-
+    changehandler= (e)=>{
+        let value= e.target.value;
+        var st = {}
+        st[e.target.id]=value;        
+        this.setState(st);
     }
     render(){
+        
         return(
             <form onSubmit={this.formSub}>
                 <h5>LOGIN</h5>
                     <label htmlFor="username">Username</label>
-                    <input type="text" id="username" placeholder="Username" />
-                    <label htmlFor="passwd">Password</label>
-                    <input type="password" id="passwd" placeholder="Password" />
+                    <input type="text" id="username" placeholder="Username" onChange={this.changehandler} />
+                    <label htmlFor="password">Password</label>
+                    <input type="password" id="password" placeholder="Password" onChange={this.changehandler}/>
                     <input type="submit" title="submit"></input>
                 </form>
         );
