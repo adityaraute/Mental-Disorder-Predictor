@@ -1,0 +1,8 @@
+.container{
+    min-height: 10vh;
+    border-bottom: 0.5rem solid saddlebrown;
+}
+.ul_li{
+    display: flex;
+    list-style: none;
+}
