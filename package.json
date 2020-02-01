@@ -1,19 +1,12 @@
 {
-<<<<<<< HEAD
   "name": "teproj",
-=======
-  "name": "teproject",
->>>>>>> 74c9a42655ffd6dcd33bd0ed60b7756b914ec340
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
-<<<<<<< HEAD
     "firebase": "^7.7.0",
-=======
->>>>>>> 74c9a42655ffd6dcd33bd0ed60b7756b914ec340
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.3.0"
