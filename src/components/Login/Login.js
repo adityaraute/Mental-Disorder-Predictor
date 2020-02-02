@@ -1,5 +1,5 @@
 import React , {Component}from 'react';
-import firebase from '../../Firebase';
+import firebase from '../../firebase';
 class Login extends Component{
 
     constructor(props){
@@ -10,22 +10,16 @@ class Login extends Component{
         this.state={
             username :'',
             password :''
-
         }
-
     }
-
     formSub(){
-        console.log("submitted");   
-        let docRef = this.db.collection('users').doc('login');
+        let docRef = this.db.collection('users').doc("login");
         docRef.set({
         username: this.state.username,
         password: this.state.password,
-        born: 1816
-        });
-   
+    }, (e)=>{console.log(e);});       
+        console.log(this.state);   
     }
-
     changehandler= (e)=>{
         let value= e.target.value;
         var st = {}
@@ -33,7 +27,6 @@ class Login extends Component{
         this.setState(st);
     }
     render(){
-        
         return(
             <form onSubmit={this.formSub}>
                 <h5>LOGIN</h5>
@@ -47,6 +40,3 @@ class Login extends Component{
     }
 }
 export default Login;
-
-
-

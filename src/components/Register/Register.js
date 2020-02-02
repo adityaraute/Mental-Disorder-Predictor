@@ -1,5 +1,5 @@
 import React , {Component}from 'react';
-import firebase from '../../Firebase';
+import firebase from '../../firebase';
 
 class Register extends Component{
 
@@ -21,14 +21,14 @@ class Register extends Component{
         console.log("submitted");
         //this is the error ! 
         //#lols     
-        let docRef = this.db.collection('users').doc('register');
+        let docRef = this.db.collection('users').doc(this.state.username);
         console.log(docRef);
         docRef.set({
         name: this.state.name,
         phone: this.state.phone,
         username: this.state.username,
         password: this.state.password,
-        born: 1815
+        registeredAt: Date.now()
         });
    
     }

@@ -2,7 +2,7 @@ import React , {Component}from 'react';
 import Login from '../../components/Login/Login';
 import Register from '../../components/Register/Register';
 import classes from './Home.module.css';
-import firebase from '../../Firebase';
+// import firebase from '../../firebase';
 
 class Home extends Component{
 
