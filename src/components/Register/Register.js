@@ -22,14 +22,17 @@ class Register extends Component{
         //this is the error ! 
         //#lols     
         let docRef = this.db.collection('users').doc(this.state.username);
-        console.log(docRef);
-        docRef.set({
+        
+        // console.log(docRef);
+
+        let setDoc = docRef.set({
         name: this.state.name,
         phone: this.state.phone,
         username: this.state.username,
         password: this.state.password,
         registeredAt: Date.now()
         });
+        console.log(this.state);
    
     }
 
@@ -52,7 +55,7 @@ class Register extends Component{
                     <label htmlFor="username">Username</label>
                     <input type="text" id="username" placeholder="Username"  onChange={this.changehandler}/>
                     <label htmlFor="passwd">Password</label>
-                    <input type="password" id="passwd" placeholder="Password"  onChange={this.changehandler} />
+                    <input type="password" id="password" placeholder="Password"  onChange={this.changehandler} />
                     <input type="submit" title="submit"></input>
                 </form>
         );

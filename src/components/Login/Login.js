@@ -11,19 +11,28 @@ class Login extends Component{
             username :'',
             password :''
         }
+        console.log(this.state);
     }
     formSub(){
-        console.log("submitted");
-        //this is the error ! 
-        //#lols     
-        let docRef = this.db.collection('users').doc('alovelace');
-        // console.log(docRef);
-        docRef.set({
-        username: this.state.username,
-        password: this.state.password,
-    }, (e)=>{console.log(e);});       
-        console.log(this.state);   
+
+        let docRef = this.db.collection('users').doc(this.state.username);
+        docRef.get().then(documentSnapshot => {
+            let data = documentSnapshot.data();
+            console.log(JSON.parse(JSON.stringify(data)));
+
+            //converting into dict from promise/object
+            var dict =JSON.parse(JSON.stringify(data));
+                    
+                if(dict.password==this.state.password){
+                    alert("password is correct");   }
+                    else{   alert("password is incorrect");     }
+
+          }).catch(err => {
+            alert('Error getting document', err);
+          });
+
     }
+
     changehandler= (e)=>{
         let value= e.target.value;
         var st = {}
