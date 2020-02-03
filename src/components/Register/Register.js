@@ -1,5 +1,5 @@
 import React , {Component}from 'react';
-import firebase from '../../Firebase';
+import firebase from '../../firebase';
 
 class Register extends Component{
 
@@ -7,7 +7,12 @@ class Register extends Component{
         super(props);
         this.formSub = this.formSub.bind(this);
         this.db = firebase.firestore();
-        console.log(this.db);
+        this.state={
+            username :'',
+            password :'',
+            name:'',
+            phone:''
+        }
         }
 
     
@@ -16,32 +21,38 @@ class Register extends Component{
         console.log("submitted");
         //this is the error ! 
         //#lols     
-        let docRef = this.db.collection('users').doc('alovelace');
+        let docRef = this.db.collection('users').doc(this.state.username);
         console.log(docRef);
         docRef.set({
-        first: 'Ada',
-        last: 'Lovelace',
-        born: 1815
+        name: this.state.name,
+        phone: this.state.phone,
+        username: this.state.username,
+        password: this.state.password,
+        registeredAt: Date.now()
         });
    
     }
 
-    componentDidMount(){
-
+    changehandler= (e)=>{
+        let value= e.target.value;
+        var st = {}
+        st[e.target.id]=value;        
+        this.setState(st);
     }
+    
     render(){
         return(
             <form onSubmit={this.formSub}>
                 <h5>Register</h5>
 
                     <label htmlFor="name">Full Name</label>
-                    <input type="text" id="name" placeholder="Name" />
+                    <input type="text" id="name" placeholder="Name"  onChange={this.changehandler}/>
                     <label htmlFor="phone">Phone No</label>
-                    <input type="number" id="phone" placeholder="Phone" />
+                    <input type="number" id="phone" placeholder="Phone"  onChange={this.changehandler}/>
                     <label htmlFor="username">Username</label>
-                    <input type="text" id="username" placeholder="Username" />
+                    <input type="text" id="username" placeholder="Username"  onChange={this.changehandler}/>
                     <label htmlFor="passwd">Password</label>
-                    <input type="password" id="passwd" placeholder="Password" />
+                    <input type="password" id="passwd" placeholder="Password"  onChange={this.changehandler} />
                     <input type="submit" title="submit"></input>
                 </form>
         );
