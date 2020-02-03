@@ -6,7 +6,7 @@ class Login extends Component{
         super(props);
         this.formSub = this.formSub.bind(this);
         this.db = firebase.firestore();
-        console.log(this.db);
+        // console.log(this.db);
         this.state={
             page: 1
         }
@@ -18,7 +18,7 @@ class Login extends Component{
         //this is the error ! 
         //#lols     
         let docRef = this.db.collection('users').doc('alovelace');
-        console.log(docRef);
+        // console.log(docRef);
         docRef.set({
         first: 'Ada',
         last: 'Lovelace',
