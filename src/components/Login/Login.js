@@ -11,7 +11,6 @@ class Login extends Component{
             username :'',
             password :''
         }
-        console.log(this.state);
     }
     formSub(){
         console.log("cewf");
@@ -23,13 +22,15 @@ class Login extends Component{
             //converting into dict from promise/object
             var dict =JSON.parse(JSON.stringify(data));
                     
-                if(dict.password==this.state.password){
+                if(dict.password===this.state.password){
                     alert("password is correct");   }
                     else{   alert("password is incorrect");     }
 
           }).catch(err => {
             alert('Error getting document', err);
           });
+          console.log(this.state);
+
 
     }
 
@@ -44,7 +45,7 @@ class Login extends Component{
             <form onSubmit={this.formSub}>
                 <h5>LOGIN</h5>
                     <label htmlFor="username">Username</label>
-                    <input type="text" id="username" placeholder="Username" onChange={this.changehandler} />
+                    <input type="text" id="username" placeholder="Username" onChange={this.changehandler} /><br></br>
                     <label htmlFor="password">Password</label>
                     <input type="password" id="password" placeholder="Password" onChange={this.changehandler}/>
                     <input type="submit" title="submit"></input>
