@@ -14,7 +14,7 @@ class Login extends Component{
         console.log(this.state);
     }
     formSub(){
-
+        console.log("cewf");
         let docRef = this.db.collection('users').doc(this.state.username);
         docRef.get().then(documentSnapshot => {
             let data = documentSnapshot.data();
