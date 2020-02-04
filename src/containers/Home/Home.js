@@ -31,8 +31,10 @@ class Home extends Component{
     render(){
         return(
             <div className={classes.container}>
-                { this.state.page ?  <Login /> : <Register />}
-                <button onClick={this.change_mode}>Change</button>
+                <div className={classes.modal}>
+                    { this.state.page ?  <Login /> : <Register />}
+                    <button onClick={this.change_mode}>Change</button>
+                </div>
             </div>
         );
     }

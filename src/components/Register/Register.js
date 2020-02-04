@@ -46,13 +46,13 @@ class Register extends Component{
                 <h5>Register</h5>
 
                     <label htmlFor="name">Full Name</label>
-                    <input type="text" id="name" placeholder="Name"  onChange={this.changehandler}/>
+                    <input type="text" id="name" placeholder="Name"  onChange={this.changehandler}/><br></br>
                     <label htmlFor="phone">Phone No</label>
-                    <input type="number" id="phone" placeholder="Phone"  onChange={this.changehandler}/>
+                    <input type="number" id="phone" placeholder="Phone"  onChange={this.changehandler}/><br></br>
                     <label htmlFor="username">Username</label>
-                    <input type="text" id="username" placeholder="Username"  onChange={this.changehandler}/>
+                    <input type="text" id="username" placeholder="Username"  onChange={this.changehandler}/><br></br>
                     <label htmlFor="passwd">Password</label>
-                    <input type="password" id="passwd" placeholder="Password"  onChange={this.changehandler} />
+                    <input type="password" id="passwd" placeholder="Password"  onChange={this.changehandler} /><br></br>
                     <input type="submit" title="submit"></input>
                 </form>
         );

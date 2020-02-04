@@ -31,7 +31,7 @@ class Login extends Component{
             <form onSubmit={this.formSub}>
                 <h5>LOGIN</h5>
                     <label htmlFor="username">Username</label>
-                    <input type="text" id="username" placeholder="Username" onChange={this.changehandler} />
+                    <input type="text" id="username" placeholder="Username" onChange={this.changehandler} /><br></br>
                     <label htmlFor="password">Password</label>
                     <input type="password" id="password" placeholder="Password" onChange={this.changehandler}/>
                     <input type="submit" title="submit"></input>
