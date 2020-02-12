@@ -28,12 +28,18 @@ class Home extends Component{
     componentDidMount(){
 
     }
+    change_page = (e) =>{
+        let pg = e.target.value;
+        console.log(pg);
+        this.setState({modu : pg});
+    }
     render(){
         return(
             <div className={classes.container}>
                 <div className={classes.modal}>
-                    { this.state.page ?  <Login /> : <Register />}
-                    <button onClick={this.change_mode}>Change</button>
+                    
+                    {/* { this.state.page ?  <Login /> : <Register />}
+                    <button onClick={this.change_mode}>Change</button> */}
                 </div>
             </div>
         );
