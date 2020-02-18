@@ -10,10 +10,11 @@ const navbar = () => {
                 </div>
                 <div>
                     <div className={classes.Menudiv}>
-                        <span>Menu 1</span>
-                        <span>Menu 2</span>
-                        <span>Menu 3</span>
-
+                        <a class={classes.span} href="/" >Home</a>
+                        <a href="/login" class={classes.span}>Login</a>
+                        <a href="/register" class={classes.span}>Register</a>
+                        <a href="/test" class={classes.span}>Test</a>
+                        <a href="/result" class={classes.span}>Result</a>
                     </div>
                 </div>
                 

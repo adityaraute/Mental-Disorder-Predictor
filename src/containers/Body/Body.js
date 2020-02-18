@@ -9,6 +9,9 @@ import TestC from '../../components/TestC/TestC'
 import Info from '../../components/Info/Info';
 import classes from './Body.module.css';
 
+
+
+import { Route } from 'react-router-dom';
 class Body extends Component{
     constructor(props){
         super(props);
@@ -32,7 +35,7 @@ class Body extends Component{
         console.log(pg);
         this.setState({modu : pg});
     }
-    render(){
+  /*  render(){
         if(this.state.modu == "Login"){
         return(
             <div>
@@ -120,7 +123,7 @@ class Body extends Component{
                             <div>
                                 <Navbar />
                                 <select className = {classes.sele} onChange={this.change_page}>
-                                        <option value="Login">Login</option>
+                                        <option value="Login" selected>Login</option>
                                         <option value="Register">Register</option>
                                         <option value="Result">Result</option>
                                         <option value="TestC">Test</option>
@@ -131,6 +134,24 @@ class Body extends Component{
                             </div>
                         );
                         }
-    }
+  
+  
+  
+                    */      
+        render(){
+            return(
+            <div>
+                <Navbar />
+                <Route path="/" exact render={()=>  <h2>Home</h2>} />
+                <Route path="/login" exact render={()=>  <h2>Login</h2>} />
+                <Route path="/register" exact render={()=>  <h2>Register</h2>} />
+                <Route path="/test" exact render={()=>  <h2>Test</h2>} />
+                <Route path="/result" exact render={()=>  <h2>Result</h2>} />
+
+                <Footer />
+            </div>)
+        }   
+                
+                
 }
 export default Body;
