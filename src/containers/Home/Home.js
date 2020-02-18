@@ -1,43 +1,44 @@
-import React , {Component}from 'react';
+import React, { Component } from 'react';
 import Login from '../../components/Login/Login';
 import Register from '../../components/Register/Register';
 import classes from './Home.module.css';
 // import firebase from '../../firebase';
 
-class Home extends Component{
+class Home extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         // this.formSub = this.formSub.bind(this);
         // this.db = firebase.firestore();
         // console.log(this.db);
-        this.state={
+        this.state = {
             page: true
         }
 
     }
 
 
-    change_mode = () =>{
+    change_mode = () => {
         let page = !this.state.page;
         console.log(this.state, page);
-        
-        this.setState({page : page});
+
+        this.setState({ page: page });
     }
 
-    componentDidMount(){
+    componentDidMount() {
+        console.log('Home');
 
     }
-    change_page = (e) =>{
+    change_page = (e) => {
         let pg = e.target.value;
         console.log(pg);
-        this.setState({modu : pg});
+        this.setState({ modu: pg });
     }
-    render(){
-        return(
+    render() {
+        return (
             <div className={classes.container}>
                 <div className={classes.modal}>
-                    
+
                     {/* { this.state.page ?  <Login /> : <Register />}
                     <button onClick={this.change_mode}>Change</button> */}
                 </div>

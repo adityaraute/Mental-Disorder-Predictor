@@ -5,7 +5,7 @@ import Home from '../Home/Home';
 import Login from '../../components/Login/Login';
 import Register from '../../components/Register/Register';
 import Result from '../../components/Result/Result';
-import TestC from '../../components/TestC/TestC'
+import Test from '../../components/TestC/TestC'
 import Info from '../../components/Info/Info';
 import classes from './Body.module.css';
 
@@ -142,12 +142,12 @@ class Body extends Component{
             return(
             <div>
                 <Navbar />
-                <Route path="/" exact render={()=>  <h2>Home</h2>} />
-                <Route path="/login" exact render={()=>  <h2>Login</h2>} />
-                <Route path="/register" exact render={()=>  <h2>Register</h2>} />
-                <Route path="/test" exact render={()=>  <h2>Test</h2>} />
-                <Route path="/result" exact render={()=>  <h2>Result</h2>} />
-
+                <Route path="/" exact render={()=>  <Home />} />
+                <Route path="/login" exact render={()=>  <Login />} />
+                <Route path="/register" exact component={Register} />
+                <Route path="/test" exact render={()=>  <Test />} />
+                <Route path="/result" exact component={Result} />
+                {/* Both render and component properties can be sued interchangeably */}
                 <Footer />
             </div>)
         }   

@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './Navbar.module.css';
+import { Link } from 'react-router-dom';
 
 const navbar = () => {
     return (
@@ -10,11 +11,22 @@ const navbar = () => {
                 </div>
                 <div>
                     <div className={classes.Menudiv}>
-                        <a class={classes.span} href="/" >Home</a>
-                        <a href="/login" class={classes.span}>Login</a>
-                        <a href="/register" class={classes.span}>Register</a>
-                        <a href="/test" class={classes.span}>Test</a>
-                        <a href="/result" class={classes.span}>Result</a>
+                        <Link to="/" exact>Home</Link>
+                        <Link to="/login" exact>Login</Link>
+                        <Link to="/register" exact>Register</Link>
+                        <Link to="/test" class={classes.span} exact>Test</Link>
+                        <Link to={{
+                            pathname: '/result',
+                            hash:'#one',
+                            search:'?query-param=true'  
+                            // Dunno how, but might prove useful
+                        }} class={classes.span} exact>Result</Link>
+                        {/* ---Study withRouter, it passes props over hierarchies.
+                            ---pathname: this.props.match.url + '/path' gives relative path instead of absolute
+                            ---use NavLink instead of Link for active node styling
+                        */}
+
+
                     </div>
                 </div>
                 
