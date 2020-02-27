@@ -14,7 +14,11 @@ class Register extends Component{
         }
         }
 
-    
+        componentDidMount()
+        {
+            console.log('Register');
+            
+        }
 
     formSub = (e) =>{
         

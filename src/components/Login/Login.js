@@ -12,6 +12,11 @@ class Login extends Component{
             password :''
         }
     }
+    componentDidMount()
+    {
+        console.log('Login');
+        
+    }
     formSub(){
         console.log("login");
         let docRef = this.db.collection('users').doc("user2");
