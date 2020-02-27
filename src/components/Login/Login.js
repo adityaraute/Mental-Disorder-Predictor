@@ -13,10 +13,11 @@ class Login extends Component{
         }
     }
     formSub(){
-        console.log("cewf");
-        let docRef = this.db.collection('users').doc(this.state.username);
+        console.log("login");
+        let docRef = this.db.collection('users').doc("user2");
+        console.log(docRef);
         docRef.get().then(documentSnapshot => {
-            let data = documentSnapshot.data();
+            let data = documentSnapshot.data();     
             console.log(JSON.parse(JSON.stringify(data)));
 
             //converting into dict from promise/object
@@ -30,6 +31,22 @@ class Login extends Component{
             alert('Error getting document', err);
           });
           console.log(this.state);
+
+
+          let collectionRef = this.db.collection('users').get();
+            // collectionRef.where("username","==",'user2').get().then(querySnapshot => {
+            //     console.log("before");
+            // querySnapshot.forEach(documentSnapshot => {
+            //     console.log(`Found document at ${documentSnapshot.ref.path}`);
+            //     console.log("after");
+            //     let data = documentSnapshot.data();
+            // console.log(JSON.parse(JSON.stringify(data)));
+
+
+            console.log(collectionRef);
+
+            // });
+            // });
 
 
     }
