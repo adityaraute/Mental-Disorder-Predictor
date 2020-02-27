@@ -29,7 +29,7 @@ class Register extends Component{
         console.log(this.state);
         //#lols     
         const db = firebase.firestore();
-        const docRef = db.collection('users').add({
+        const docRef = db.collection('users').doc(this.state.username).set({
             username:this.state.username,
             phone:this.state.phone,
             password:this.state.password,

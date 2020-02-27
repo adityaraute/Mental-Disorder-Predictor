@@ -6,6 +6,18 @@ class Login extends Component{
         super(props);
         this.formSub = this.formSub.bind(this);
         this.db = firebase.firestore();
+        let cityRef = firebase.firestore().collection('users').doc('sanika');
+            let getDoc = cityRef.get()
+            .then(doc => {
+                if (!doc.exists) {
+                console.log('No such document!');
+                } else {
+                console.log('Document data:', doc.data());
+                }
+            })
+            .catch(err => {
+                console.log('Error getting document', err);
+            });
         // console.log(this.db);
         this.state={
             username :'',
@@ -18,41 +30,22 @@ class Login extends Component{
         
     }
     formSub(){
+        console.log(this.state);
         console.log("login");
-        let docRef = this.db.collection('users').doc("user2");
-        console.log(docRef);
-        docRef.get().then(documentSnapshot => {
-            let data = documentSnapshot.data();     
-            console.log(JSON.parse(JSON.stringify(data)));
-
-            //converting into dict from promise/object
-            var dict =JSON.parse(JSON.stringify(data));
-                    
-                if(dict.password===this.state.password){
-                    alert("password is correct");   }
-                    else{   alert("password is incorrect");     }
-
-          }).catch(err => {
-            alert('Error getting document', err);
-          });
-          console.log(this.state);
-
-
-          let collectionRef = this.db.collection('users').get();
-            // collectionRef.where("username","==",'user2').get().then(querySnapshot => {
-            //     console.log("before");
-            // querySnapshot.forEach(documentSnapshot => {
-            //     console.log(`Found document at ${documentSnapshot.ref.path}`);
-            //     console.log("after");
-            //     let data = documentSnapshot.data();
-            // console.log(JSON.parse(JSON.stringify(data)));
-
-
-            console.log(collectionRef);
-
-            // });
-            // });
-
+        console.log(this.state.username);
+        
+        let cityRef = this.db.collection('users').doc('rj8228');
+            let getDoc = cityRef.get()
+            .then(doc => {
+                if (!doc.exists) {
+                console.log('No such document!');
+                } else {
+                console.log('Document data:', doc.data());
+                }
+            })
+            .catch(err => {
+                console.log('Error getting document', err);
+            });
 
     }
 
