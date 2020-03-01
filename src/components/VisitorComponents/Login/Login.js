@@ -1,36 +1,34 @@
 import React , {Component}from 'react';
-import firebase from '../../firebase';
+import firebase from '../../../firebase';
+import {Redirect} from 'react-router-dom';
 class Login extends Component{
-
     constructor(props){
         super(props);
         this.formSub = this.formSub.bind(this);
         this.db = firebase.firestore();
-      
         // console.log(this.db);
         this.state={
             username :'',
             password :'',
-            tagline  :'LOGIN'
+            tagline  :'LOGIN',
+            p : ''
         }
     }
     componentDidMount()
     {
         console.log('Login');
-        
     }
     formSub(e){
-       
         let cityRef = this.db.collection('users').doc(this.state.username);
         let getDoc = cityRef.get()
             .then(doc => {
                 if (!doc.exists) {
-                let string= "Wrong ID or Password";
-                this.setState({tagline: string});
-                } else {
+                let string= "Wrong ID or Password";  
+                console.log('huh'); 
+                this.setState({tagline:string})
+            } else {
                 console.log('Document data:', doc.data());
-                let string= "HI, "+ this.state.username;
-                this.setState({tagline: string});
+                this.setState({p:<Redirect to='/user' />})
                 }
             })
             .catch(err => {
@@ -38,18 +36,6 @@ class Login extends Component{
             });
             e.preventDefault();
     }
-//   let cityRef = firebase.firestore().collection('users').doc('sanika');
-//             let getDoc = cityRef.get()
-//             .then(doc => {
-//                 if (!doc.exists) {
-//                 console.log('No such document!');
-//                 } else {
-//                 console.log('Document data:', doc.data());
-//                 }
-//             })
-//             .catch(err => {
-//                 console.log('Error getting document', err);
-//             });
 
     changehandler= (e)=>{
         let value= e.target.value;
@@ -66,6 +52,7 @@ class Login extends Component{
                     <label htmlFor="password">Password</label>
                     <input type="password" id="password" placeholder="Password" onChange={this.changehandler}/>
                     <input type="submit" title="submit"></input>
+                    {this.state.p}
                 </form>
         );
     }
