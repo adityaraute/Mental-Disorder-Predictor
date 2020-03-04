@@ -1,8 +1,8 @@
 import React from 'react';
-import classes from './Navbar.module.css';
+import classes from './Navbartwo.module.css';
 import { Link } from 'react-router-dom';
 
-const navbar = () => {
+const navbartwo = () => {
     return (
         <nav className={classes.container}>
             <div className={classes.ul_li}>
@@ -11,16 +11,17 @@ const navbar = () => {
                 </div>
                 <div>
                     <div className={classes.Menudiv}>
-                        <Link to="/" exact>Home</Link>
-                        <Link to="/login" exact>Login</Link>
-                        <Link to="/register" exact>Register</Link>
-                        <Link to="/test" class={classes.span} exact>Test</Link>
+                        <Link to="/user" exact>Dashboard</Link>
+                        <Link to="/user/tests" >Tests</Link>
                         <Link to={{
-                            pathname: '/result',
+                            pathname: '/user/result',
                             hash:'#one',
                             search:'?query-param=true'  
                             // Dunno how, but might prove useful
-                        }} class={classes.span} exact>Result</Link>
+                        }} class={classes.span} >Result</Link>
+                        <Link to="/user/doc" >Doctor</Link>
+                        <Link to="/">Logout</Link>
+
                         {/* ---Study withRouter, it passes props over hierarchies.
                             ---pathname: this.props.match.url + '/path' gives relative path instead of absolute
                             ---use NavLink instead of Link for active node styling
@@ -35,4 +36,4 @@ const navbar = () => {
     )
 }
 
-export default navbar;
+export default navbartwo;

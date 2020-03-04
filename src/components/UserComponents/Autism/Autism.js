@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class TestC extends Component {
+class Autism extends Component{
     constructor(props) {
         super(props);
         this.state = {
@@ -12,7 +12,6 @@ class TestC extends Component {
         };
     }
     changehandler = (e) => {
-
         this.setState({
             [e.target.id]: e.target.value
         });
@@ -23,38 +22,13 @@ class TestC extends Component {
 
     }
     componentDidMount() {
-        console.log('Test');
+        console.log('Aut');
 
     }
-    render() {
-        //     switch(this.state.testid){
-        //             case 0: return(
-        //                                 <div>
-        //                                     <h4>Id : 0</h4>
-        //                                 </div>
-        //                             )
-        //             case 1:return(
-        //                                 <div>
-        //                                 <h4>Id : 1</h4>
-
-        //                                 </div>
-        //                             )
-        //             case 2:return(
-        //                                 <div>
-        //                                 <h4>Id : 2</h4>
-
-        //                                 </div>
-        //                             )
-        //     }
-
-        // }
-
-
-        return (
-            <div>
-                <h2>Test</h2>
-                <form onSubmit={this.formSub}>
-                    <h5>Answer the questions</h5>
+    render(){
+        return(
+        <form onSubmit={this.formSub}>
+                    <h5>Autism questions</h5>
 
                     <label htmlFor="one">Q1</label>
                     <input type="text" id="one" placeholder="One" onChange={this.changehandler} value={this.state.one} /><br></br>
@@ -66,9 +40,8 @@ class TestC extends Component {
                     <input type="text" id="four" placeholder="Four" onChange={this.changehandler} value={this.state.four} />
                     <input type="submit" title="submit"></input>
                 </form>
-            </div>
-        );
+        )
     }
-
+    
 }
-export default TestC;
+export default Autism;
