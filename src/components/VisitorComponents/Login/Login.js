@@ -24,7 +24,7 @@ class Login extends Component{
             .then(doc => {
                 if (!doc.exists) {
                 let string= "Wrong ID or Password";  
-                console.log('huh'); 
+                // console.log('huh'); 
                 this.setState({tagline:string})
             } else {
                 console.log('Document data:', doc.data());
@@ -47,7 +47,6 @@ class Login extends Component{
         return(
             <form onSubmit={this.formSub}>
                 
-                <h5>LOGIN</h5>
                 <h5>{this.state.tagline}</h5>
                     <label htmlFor="username">Username</label>
                     <input type="text" id="username" placeholder="Username" onChange={this.changehandler} /><br></br>
