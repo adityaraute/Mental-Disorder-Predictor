@@ -11,14 +11,14 @@ const navbartwo = () => {
                 </div>
                 <div>
                     <div className={classes.Menudiv}>
-                        <Link to="/user" exact>Dashboard</Link>
+                        <Link to="/user" >Dashboard</Link>
                         <Link to="/user/tests" >Tests</Link>
                         <Link to={{
                             pathname: '/user/result',
                             hash:'#one',
                             search:'?query-param=true'  
                             // Dunno how, but might prove useful
-                        }} class={classes.span} >Result</Link>
+                        }} className={classes.span} >Result</Link>
                         <Link to="/user/doc" >Doctor</Link>
                         <Link to="/">Logout</Link>
 
