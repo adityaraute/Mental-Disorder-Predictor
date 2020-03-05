@@ -1,0 +1,29 @@
+.container{
+    min-height: 5vh;
+    background-color: skyblue;
+    color: rgb(83, 6, 94);
+    padding: 1rem;
+    font-size: larger;
+}
+.ul_li{
+    display: flex;
+    justify-content: space-around;
+}
+.Menudiv{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding:  0rem 3rem;
+}
+div a.my-active{
+    color: pink !important
+}
+.Menudiv a{
+    text-decoration: none   ;
+    color: black 
+}
+.Menudiv a:hover{
+    transform: scale(1.2);
+    transition: 0.2s all linear;
+    cursor: pointer;
+}
