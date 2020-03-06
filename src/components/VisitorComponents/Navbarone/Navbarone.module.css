@@ -1,7 +1,7 @@
 .container{
     min-height: 5vh;
-    background-color: skyblue;
-    color: rgb(83, 6, 94);
+    background-color: #b7ede0;
+    color:#02353c;
     padding: 1rem;
     font-size: larger;
 }
@@ -15,12 +15,17 @@
     width: 100%;
     padding:  0rem 3rem;
 }
+link
+{
+
+    background-color: #02353c;
+}
 div a.my-active{
     color: pink !important
 }
 .Menudiv a{
     text-decoration: none   ;
-    color: black 
+    color:#02353c; 
 }
 .Menudiv a:hover{
     transform: scale(1.2);

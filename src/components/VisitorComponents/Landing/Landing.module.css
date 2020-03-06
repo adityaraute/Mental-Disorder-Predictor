@@ -1,3 +1,328 @@
+
+
 .hero{
     width: 100vh;
 }
+/* section 1 -------------------------------------------------------------------------------------------------------------------------*/
+/*for Image*/
+.Image
+{   
+    background: url(../../../Assets/children.jpg) no-repeat fixed bottom;
+    background-size: cover;
+    color: #ccc;
+    height: 66vh;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: -2;
+}
+/*for text within image*/
+.text2
+{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3vw;
+    color: #dcf7f7;
+    width: 75vw;
+    padding-top:10vw;
+    padding-left: 12vw;
+}
+.text3
+{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2vw;
+    color: #dcf7f7;
+    width: 75vw;
+    
+    padding-left: 12vw;
+}
+
+/*for overlay on image*/
+.backoverlay
+{   
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #02353c  ;
+    height: 100vh;
+    opacity: 0.6;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+/*for added overlay*/
+.Overlay
+{
+    background-color: #000 ;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+
+}
+
+/* section 2 -------------------------------------------------------------------------------------------------------------------------*/
+/*for buttons*/
+.button {
+  border-radius: 4px;
+  background-color: #2d9685;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+ margin: 5px;
+  text-align: center;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+/*for gray background in section 2*/
+.flexrow
+{
+background-color: #f2f7f7;
+height: 70vh;
+width: 100%;
+position: absolute;
+z-index: -3;
+background-attachment: scroll;
+
+}
+/*Know more box*/
+.infobox
+{   background: url(../../../Assets/children2.jpg) no-repeat fixed bottom;
+    background-attachment: scroll;
+    background-size: 100% 100%;
+    float:left;
+    margin-top:5vw;
+    margin-left:7vw;
+    border : 0.2vw solid #02353c ;
+    border-radius: 1.3vw;
+    color: #ccc;
+    height: 50vh;
+    width: 30vw;
+    position: relative;
+    margin-bottom:5vw;
+    z-index: -2;
+    text-align: center;
+}
+/*TAke the Test box*/
+.testbox
+{  background: url(../../../Assets/children1.jpg) no-repeat fixed bottom;
+    background-size: 100% 100%;
+    object-fit: contain;
+    background-attachment: scroll;
+    float: right;
+    margin-top:5vw;
+    margin-right:5vw;
+    border : 0.2vw solid #02353c ;
+    border-radius: 1vw;
+    color: #ccc;
+    height: 50vh;
+    width: 30vw;
+    position: relative;
+    margin-bottom:5vw;
+    z-index: -2;
+    text-align: center;
+}
+
+/*For text in the box*/
+.text1
+{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2vw;
+    color: white;
+    object-fit:contain;
+    margin-bottom: 2vh;
+    padding-top: 5vw;
+    padding-left: 2vw;
+}
+
+.backoverlay1
+{   border-radius: 1vw;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #02353c ;
+    height: 100%;
+    opacity: 0.6;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+/*Quote Text*/
+.text
+{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 4vw;
+    color: #02353c;
+    width: 75vw;
+    padding-top: 5vw;
+    padding-left: 12vw;
+    padding-bottom: 5vw;
+    float: left;
+}
+/* section 3 -------------------------------------------------------------------------------------------------------------------------*/
+/*Lorem Ipsum*/
+
+.text4
+{
+    text-align: justify;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2vw;
+    color: #02353c;
+    width: 75vw;
+    padding-top: 3vw;
+    padding-left: 12vw;
+    padding-bottom: 5vw;
+    float: left;
+}
+/*Lorem Ipsum gray background*/
+.flexrow1
+{
+margin-top: 110vh;
+background-color: #f2f7f7;
+height: 55vh;
+width: 100%;
+position: absolute;
+z-index: -3;
+background-attachment: scroll;
+}
+/* section 4 -------------------------------------------------------------------------------------------------------------------------*/
+/*Autism*/
+.infobox1
+{   background: url(../../../Assets/autism.jpg) no-repeat fixed bottom;
+    background-attachment: scroll;
+    background-size: 100% 100%;
+    float:left;
+    margin-top:165vh;
+
+    border : 0.2vw solid #02353c ;
+    color: #ccc;
+    height: 50vh;
+    width: 32.5vw;
+    position: relative;
+    margin-bottom:5vw;
+    z-index: -2;
+    text-align: center;
+}
+/*Dyslexia*/
+.infobox2
+{   background: url(../../../Assets/dyslexia.jpg) no-repeat fixed bottom;
+    background-attachment: scroll;
+    background-size: 100% 100%;
+    float:left;
+    margin-top:165vh;
+    border : 0.2vw solid #02353c ;
+    color: #ccc;
+    height: 50vh;
+    width: 32.2vw;
+    position: relative;
+    margin-bottom:5vw;
+    z-index: -2;
+    text-align: center;
+}
+/*Colour Blindness*/
+.infobox3
+{   background: url(../../../Assets/colour.jpeg) no-repeat fixed right;
+    background-attachment: scroll;
+    background-size: 100% 100%;
+    float:right;
+    margin-top:165vh;
+    border : 0.2vw solid #02353c ;
+    color: #ccc;
+    height: 50vh;
+    width: 33vw;
+    position: relative;
+    margin-bottom:5vw;
+    z-index: -2;
+    text-align: center;
+
+}
+/*Overlay for boxes*/
+.backoverlay2
+{  
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #02353c ;
+    height: 100%;
+    opacity: 0.6;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+/*for buttons in boxes*/
+.button2{
+    border-radius: 4px;
+    background-color: #f0604a;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+   margin: 5px;
+    text-align: center;
+  }
+  .button2 span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button2 span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button2:hover span {
+    padding-right: 25px;
+  }
+  
+  .button2:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
