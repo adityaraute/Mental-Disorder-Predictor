@@ -2,7 +2,10 @@ import React from 'react';
 
 const info = props =>{
     return (<div>
-        Info
+        <div id="autism">Autism</div>
+        <div id="dyslexia">Dyslexia</div>
+        <div id="cb">Colour Blindness</div>
+
     </div>);
 }
 
