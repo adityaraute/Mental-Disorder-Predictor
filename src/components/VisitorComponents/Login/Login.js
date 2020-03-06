@@ -1,5 +1,5 @@
 import React , {Component}from 'react';
-import firebase from '../../../Firebase';
+import firebase from '../../../firebase';
 import {Redirect} from 'react-router-dom';
 class Login extends Component{
     constructor(props){

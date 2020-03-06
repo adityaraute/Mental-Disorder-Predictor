@@ -1,14 +1,9 @@
 import React, {Component} from 'react';
-import children from '../../../Assets/children.jpg';
 import classes from './Landing.module.css';
-import { Link } from 'react-router-dom';
-import colour from '../../../Assets/colour.jpeg'
-import autism from '../../../Assets/autism.jpg'
-import dyslexia from '../../../Assets/dyslexia.jpg'
+import {Link } from 'react-router-dom';
 class Landing extends Component{
     componentDidMount(){
-        console.log('landing');
-        
+        console.log('landing'); 
     }
     render(){
         return(
@@ -36,7 +31,7 @@ class Landing extends Component{
                             <div className={classes.text1}>
                             Information About The Cause of Symptoms?
                             </div><br></br><br></br><br></br><br></br>
-                            <Link to="" ><a class={classes.button}><span>Know More</span></a></Link>
+                            <Link to="/info" ><a class={classes.button}><span>Know More</span></a></Link>
                         </div>
                         <div className={classes.testbox}>
                             
@@ -44,7 +39,7 @@ class Landing extends Component{
                             <div className={classes.text1}>
                             You Know The Cause And Want To Be Sure?
                             </div><br></br><br></br><br></br><br></br>
-                            <Link to="/user/tests" ><a class={classes.button}><span>Take the Test</span></a></Link>
+                            <Link to="/login" ><a class={classes.button}><span>Take the Test</span></a></Link>
                         </div>
                         <div className={classes.text}>
                         "Only where children gather is there any real chance of fun."
@@ -67,7 +62,7 @@ class Landing extends Component{
                             <div className={classes.text1}>
                             AUTISM
                             </div><br></br><br></br><br></br><br></br>
-                            <Link to="/user/autism" ><a class={classes.button2}><span>Know More</span></a></Link>
+                            <Link to="/info#autism" ><a class={classes.button2}><span>Know More</span></a></Link>
                         </div>
                         <div className={classes.infobox2}>
                             
@@ -75,7 +70,7 @@ class Landing extends Component{
                             <div className={classes.text1}>
                             DYSLEXIA
                             </div><br></br><br></br><br></br><br></br>
-                            <Link to="/user/dyslexia" ><a class={classes.button2}><span>Know More</span></a></Link>
+                            <Link to="/info#dyslexia" ><a class={classes.button2}><span>Know More</span></a></Link>
                         </div>
                         <div className={classes.infobox3}>
                             
@@ -83,7 +78,7 @@ class Landing extends Component{
                             <div className={classes.text1}>
                             COLOUR BLINDNESS
                             </div><br></br><br></br><br></br><br></br>
-                            <Link to="/user/colour" ><a class={classes.button2}><span>Know More</span></a></Link>
+                            <Link to="/info#cb" ><a class={classes.button2}><span>Know More</span></a></Link>
                         </div>
                     </div>
             </div>
