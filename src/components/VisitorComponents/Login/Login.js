@@ -3,7 +3,7 @@ import firebase from '../../../firebase';
 import { Redirect } from 'react-router-dom';
 import TextField from '@material-ui/core/TextField';
 import Container from '@material-ui/core/Container';
-import { Button } from '@material-ui/core';
+import { Button , Avatar, Paper } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Card from '@material-ui/core/Card';
@@ -60,11 +60,14 @@ class Login extends Component {
         return (
             <Container component="main" maxWidth="xs" style={{ paddingTop: '3rem' }} centered>
                 <CssBaseline />
-                
-                <Typography component="h1" variant="h5">
+                <Paper align="center" elevation={0} style={{minHeight: '20vh', display:'flex', flexDirection: 'column', justifyContent: 'space-evenly', backgroundColor:'#fafafa', border: 'none'}} >
+                <Avatar src="/broken-image.jpg"  align="center" />
+
+                <Typography component="h1" variant="h5" align="center">
                     {this.state.tagline}
                 </Typography>
-
+                </Paper>
+                <Paper style={{backgroundColor:'#fafafa', border: 'none'}}>
                 <form onSubmit={this.formSub} style={{ paddingTop: '3rem' }} >
                     <TextField id="username" label="Username" fullWidth variant="outlined" onChange={this.changehandler} style={{ marginBottom: '1rem' }} />
                     <TextField id="password" label="Password" fullWidth variant="outlined" onChange={this.changehandler} style={{ marginBottom: '1rem' }} />
@@ -77,6 +80,8 @@ class Login extends Component {
                     </Button>
                     {this.state.p}
                 </form>
+                </Paper>
+
             </Container>
         );
     }
