@@ -13,6 +13,7 @@ class CB extends Component{
             four: ''
         };
     }
+    // 0-7 circle, 8-15 diamond, 16-24 rectangle, 25-31 triangle
     changehandler = (e) => {
         this.setState({
             [e.target.id]: e.target.value

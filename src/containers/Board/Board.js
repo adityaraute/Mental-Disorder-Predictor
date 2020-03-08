@@ -8,7 +8,7 @@ import Autism from '../../components/UserComponents/Autism/Autism';
 import Dyslexia from '../../components/UserComponents/Dyslexia/Dyslexia';
 import CB from '../../components/UserComponents/CB/CB';
 // import classes from './Home.module.css';
-import { Route , Switch} from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 // import firebase from '../../firebase';
 
@@ -16,7 +16,8 @@ class Board extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            page: true
+            page: true,
+            user: props.user
         }
     }
     componentDidMount() {
@@ -24,13 +25,14 @@ class Board extends Component {
     render() {
         return (
             <Auxiliary>
-                <Route path="/user/" exact render={()=>  <Dashboard />} />
-                <Route path="/user/tests" exact component={Tests} />
-                <Route path="/user/result" exact component={Result} />
-                <Route path="/user/doc" exact component={Doctor} />
-                <Route path="/user/autism" exact component={Autism} />
-                <Route path="/user/dyslexia" exact component={Dyslexia} />
-                <Route path="/user/colour" exact component={CB} />
+                <Route path="/user/" exact render={() => <Dashboard user={this.state.user} />} />
+                {/* <Route path="/user/tests" exact component={Tests} /> */}
+                <Route path="/user/tests" exact render={() => <Tests user={this.state.user} />} />
+                <Route path="/user/result" exact render={() => <Result user={this.state.user} />} />
+                <Route path="/user/doc" exact render={() => <Doctor user={this.state.user} />} />
+                <Route path="/user/autism" exact render={() => <Autism user={this.state.user} />} />
+                <Route path="/user/dyslexia" exact render={() => <Dyslexia user={this.state.user} />} />
+                <Route path="/user/colour" exact render={() => <CB user={this.state.user} />} />
             </Auxiliary>
         );
     }
