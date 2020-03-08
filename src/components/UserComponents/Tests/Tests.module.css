@@ -1,0 +1,17 @@
+.card{
+    margin-top: 2rem;
+    text-align: center;
+    color: #02353c;
+}
+
+
+.card button{
+    background-color:red;
+    color: white;
+
+
+}
+.card link{
+    background-color: white;
+    text-decoration: none;
+}

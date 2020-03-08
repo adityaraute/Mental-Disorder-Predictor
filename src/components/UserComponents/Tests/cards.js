@@ -1,32 +1,33 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom';
+import {
+    Card, CardImg, CardText, CardBody,
+    CardTitle, CardSubtitle, Button
+  } from 'reactstrap';
+ 
 class Cards extends Component{
     constructor(props) {
         super(props);
-        this.state = {
-            testid: 0,
-            one: '',
-            two: '',
-            three: '',
-            four: ''
-        }
+       
+    }
 
         render() {
             return (
                 <div>
       <Card>
-        <CardImg top width="100%" src="../../../Assets/children.jpg" alt="Card image cap" />
+        <CardImg top width="100%" height="350rem" src={this.props.details.img} alt="Card image cap" />
         <CardBody>
-          <CardTitle>Card title</CardTitle>
-          <CardSubtitle>Card subtitle</CardSubtitle>
-          <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-          <Button>Button</Button>
+          <CardTitle><strong>{this.props.details.name}</strong></CardTitle>
+          
+          <CardText>{this.props.details.description}</CardText>
+          <Link to={this.props.details.link}><Button>Test Now</Button></Link>
         </CardBody>
       </Card>
     </div> 
             );
         }
     
+
     } 
 
 export default Cards;

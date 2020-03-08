@@ -1,18 +1,24 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import classes from './Dashboard.module.css';
-class Dashboard extends Component{
-    componentDidMount(){
-        console.log('dashboard');
+class Dashboard extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            user: props.user
+        }
     }
-    render(){
-        return(
+
+    render() {
+        return (
             <div>
-                    {/* { this.state.page ?  <Login /> : <Register />}
+                {/* { this.state.page ?  <Login /> : <Register />}
                     <button onClick={this.change_mode}>Change</button> */}
-                    <div className={classes.hero}>
-                        "Dashboard"
-                    </div>
-                   
+                <div className={classes.hero}>
+                    "Dashboard"
+                <h5>Welcome, {this.state.user}</h5>
+
+                </div>
+
             </div>
         )
     }
