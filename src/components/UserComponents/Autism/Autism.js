@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import classes from './Autism.module.css';
+import firebase from '../../../firebase';
+
 
 class Autism extends Component {
     constructor(props) {
         super(props);
+        this.formSub = this.formSub.bind(this);
         this.state = {
+            pred:'',
+            user: props.user
 
         };
         this.questions = ["1)Does your child look at you when you call his/her name?", "2)How easy is it for you to get eye contact with your child?",
@@ -29,13 +34,23 @@ class Autism extends Component {
         })
             .then(function (response) {
                 //handle success
-                console.log(response);
                 console.log("autism prediction", response.data.results.prediction);
+                this.setState({
+                    pred:response.data.results.prediction,
+                 })
             })
             .catch(function (response) {
                 //handle error
-                console.log(response);
+                
             });
+
+            //firebase store test result 
+            // this.state.username
+            const db = firebase.firestore();
+            const docRef = db.collection('test').doc().set({
+                autism:this.state.pred,
+                user:'rj8228',
+            })
 
     }
 
@@ -45,7 +60,7 @@ class Autism extends Component {
     }
 
     componentDidMount() {
-        console.log('Aut');
+        console.log(this.state);
     }
     render() {
         return (
