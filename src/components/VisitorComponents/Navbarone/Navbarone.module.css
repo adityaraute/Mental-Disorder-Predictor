@@ -26,6 +26,8 @@ div a.my-active{
 .Menudiv a{
     text-decoration: none   ;
     color:#02353c; 
+    display: flex;
+    justify-content: space-evenly;
 }
 .Menudiv a:hover{
     transform: scale(1.2);

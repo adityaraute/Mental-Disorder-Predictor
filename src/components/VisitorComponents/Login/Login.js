@@ -5,8 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import Container from '@material-ui/core/Container';
 import { Button , Avatar, Paper } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Card from '@material-ui/core/Card';
+// import Card from '@material-ui/core/Card';
 
 
 
@@ -59,18 +58,18 @@ class Login extends Component {
     render() {
         return (
             <Container component="main" maxWidth="xs" style={{ paddingTop: '3rem' }} centered>
-                <CssBaseline />
-                <Paper align="center" elevation={0} style={{minHeight: '20vh', display:'flex', flexDirection: 'column', justifyContent: 'space-evenly', backgroundColor:'#fafafa', border: 'none'}} >
+                {/* <CssBaseline /> */}
+                <Paper align="center" elevation={0} style={{minHeight: '20vh', display:'flex', flexDirection: 'column', justifyContent: 'space-evenly', backgroundColor:'white', border: 'none'}} >
                 <Avatar src="/broken-image.jpg"  align="center" />
 
                 <Typography component="h1" variant="h5" align="center">
                     {this.state.tagline}
                 </Typography>
                 </Paper>
-                <Paper style={{backgroundColor:'#fafafa', border: 'none'}}>
+                <Paper style={{backgroundColor:'white', border: 'none'}} elevation={0}>
                 <form onSubmit={this.formSub} style={{ paddingTop: '3rem' }} >
                     <TextField id="username" label="Username" fullWidth variant="outlined" onChange={this.changehandler} style={{ marginBottom: '1rem' }} />
-                    <TextField id="password" label="Password" fullWidth variant="outlined" onChange={this.changehandler} style={{ marginBottom: '1rem' }} />
+                    <TextField id="password" label="Password" type="password" fullWidth variant="outlined" onChange={this.changehandler} style={{ marginBottom: '1rem' }} />
 
                     {/* <label htmlFor="username">Username</label>
                     <input type="text" id="username" placeholder="Username" onChange={this.changehandler} /><br></br>
