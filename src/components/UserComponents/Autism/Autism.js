@@ -9,7 +9,6 @@ class Autism extends Component {
         super(props);
         this.formSub = this.formSub.bind(this);
         this.state = {
-            pred:'',
             user: props.user
 
         };
@@ -18,40 +17,38 @@ class Autism extends Component {
             "5)Does your child pretend? (e.g. care for dolls, talk on a toy phone)", "6)Does your child follow where you’re looking?",
             "7)If you or someone else in the family is visibly upset, does your child show signs of wanting to comfort them? (e.g. stroking hair, hugging them)", "8)Would you describe your child’s first words as:",
             " 9)Does your child use simple gestures? (e.g. wave goodbye)", "10)Does your child stare at nothing with no apparent purpose?"]
+        this.prediction=""
     }
     formSub = (e) => {
+
         e.preventDefault();
+        let predict;
         var formData = new FormData();
         for (let i = 0; i < 9; i++) {
             formData.append('q' + (i + 1), this.state[i]);
         }
         formData.append('q10', Math.abs(this.state[9] - 1));
+        var self = this;
         axios({
             method: 'post',
             url: 'https://gentle-caverns-95040.herokuapp.com/',
             data: formData,
             headers: { 'Content-Type': 'multipart/form-data' }
-        })
-            .then(function (response) {
-                //handle success
+        }).then(function (response) {
                 console.log("autism prediction", response.data.results.prediction);
-                this.setState({
-                    pred:response.data.results.prediction,
-                 })
+                predict = response.data.results.prediction;
+                self.setState({prediction: "Result : "+ response.data.results.prediction    })//= "Result : "+ response.data.results.prediction;                
             })
-            .catch(function (response) {
-                //handle error
-                
+            .catch(function (response) {           
             });
-
-            //firebase store test result 
-            // this.state.username
-            const db = firebase.firestore();
-            const docRef = db.collection('test').doc().set({
-                autism:this.state.pred,
-                user:'rj8228',
-            })
-
+             const db = firebase.firestore();
+                const docRef = db.collection('test').doc(this.state.user).set({
+                    // prediction:predict,
+                    user:this.state.user,
+                    test:'1'
+                })
+                // console.log(predict);
+           
     }
 
     changeRadio = (e) => {
@@ -84,6 +81,7 @@ class Autism extends Component {
                         })}
                     </div>
                     <input type="submit" title="submit"></input>
+                    <h2>{this.state.prediction}</h2>
                 </form>
             </div>
         )
