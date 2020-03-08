@@ -14,9 +14,12 @@ class Dashboard extends Component {
                 {/* { this.state.page ?  <Login /> : <Register />}
                     <button onClick={this.change_mode}>Change</button> */}
                 <div className={classes.hero}>
-                    "Dashboard"
                 <h5>Welcome, {this.state.user}</h5>
-
+                    <div>
+                    <h6>Our application focusses on providing an estimate of whether or not the candidate is suffering from any of the said disorders.
+                        We suggest you that if the result is given as positive, you must seek medical advice at the earliest.
+                    </h6>
+                    </div>
                 </div>
 
             </div>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Auxiliary from '../../../containers/Auxiliary/Auxiliary';
 import classes from './CB.module.css';
 import { Container } from '@material-ui/core';
-import firebase from '../../../Firebase';
+import firebase from '../../../firebase';
 
 class CB extends Component {
     constructor(props) {
@@ -137,14 +137,18 @@ class CB extends Component {
             return (
                 <Container>
                     <form onSubmit={this.formSub}>
-                        <h5>CB questions</h5>
-                        <div>
+                        <h5>Colour Blindness Test</h5>
+                        <h6>Guess the shape shown in the picture</h6>
+                        <div className={classes.holder}>
                             <img src={image} alt={image} className={classes.quesImg}></img>
-                            <button variant="contained" id="rect" color="primary" onClick={this.submitHandler}>Rectangle</button>
-                            <button variant="contained" id="circ" color="primary" onClick={this.submitHandler}>Circle</button>
-                            <button variant="contained" id="tria" color="primary" onClick={this.submitHandler}>Triangle</button>
-                            <button variant="contained" id="diam" color="primary" onClick={this.submitHandler}>Diamond</button>
-                            <button variant="contained" id="nope" color="primary" onClick={this.submitHandler}>Cannot Understand</button>
+                            <div className={classes.BtnGrp}>
+                            <button variant="contained" id="rect" className={classes.Btn} color="primary" onClick={this.submitHandler}>Rectangle</button>
+                            <button variant="contained" id="circ" className={classes.Btn} color="primary" onClick={this.submitHandler}>Circle</button>
+                            <button variant="contained" id="tria" className={classes.Btn} color="primary" onClick={this.submitHandler}>Triangle</button>
+                            <button variant="contained" id="diam" className={classes.Btn} color="primary" onClick={this.submitHandler}>Diamond</button>
+                            <button variant="contained" id="nope" className={classes.Btn} color="primary" onClick={this.submitHandler}>Cannot Understand</button>
+                            </div>
+
                         </div>
                     </form>
 
