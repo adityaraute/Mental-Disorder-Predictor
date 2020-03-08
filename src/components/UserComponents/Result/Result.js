@@ -36,7 +36,7 @@ class Result extends Component{
     render(){
         if(this.state.results){
             this.autism=this.state.results.map((el,index)=>
-                <div>{el.test}</div>
+                <div>{el.test} - {el.prediction}</div>
                 )
             return(
                 <div>
