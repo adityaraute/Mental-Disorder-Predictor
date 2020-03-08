@@ -3,6 +3,7 @@ import Auxiliary from '../../../containers/Auxiliary/Auxiliary';
 import classes from './CB.module.css';
 import { Container } from '@material-ui/core';
 import firebase from '../../../firebase';
+import {Redirect} from 'react-router-dom';
 
 class CB extends Component {
     constructor(props) {
@@ -163,6 +164,7 @@ class CB extends Component {
                 <Container>
                     <h6>Test done</h6>
                     <h4>{this.correct}</h4>
+                    <Redirect to="/user/result" />
                 </Container>
             )
         }
