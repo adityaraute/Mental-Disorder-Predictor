@@ -17,7 +17,10 @@ class Autism extends Component {
             "5)Does your child pretend? (e.g. care for dolls, talk on a toy phone)", "6)Does your child follow where you’re looking?",
             "7)If you or someone else in the family is visibly upset, does your child show signs of wanting to comfort them? (e.g. stroking hair, hugging them)", "8)Would you describe your child’s first words as:",
             " 9)Does your child use simple gestures? (e.g. wave goodbye)", "10)Does your child stare at nothing with no apparent purpose?"]
-        this.prediction=""
+        this.prediction="";
+        
+        
+
     }
     formSub = (e) => {
 
@@ -37,16 +40,69 @@ class Autism extends Component {
         }).then(function (response) {
                 console.log("autism prediction", response.data.results.prediction);
                 predict = response.data.results.prediction;
-                self.setState({prediction: "Result : "+ response.data.results.prediction    })//= "Result : "+ response.data.results.prediction;                
+                // self.setState({prediction: "Result : "+ response.data.results.prediction    })//= "Result : "+ response.data.results.prediction;       
+                console.log(predict);
+                self.setState({prediction:predict});         
+                console.log(this.state);
+                console.log(self.state);
             })
             .catch(function (response) {           
             });
-             const db = firebase.firestore();
-                const docRef = db.collection('test').doc(this.state.user).set({
-                    // prediction:predict,
-                    user:this.state.user,
-                    test:'1'
-                })
+
+                console.log(this.state);
+
+                //fire base save into array
+
+
+
+                const db = firebase.firestore();
+                let cityRef = db.collection('test').doc(this.state.user);
+                let getDoc = cityRef.get()
+                    .then(doc => {
+                        if (!doc.exists) {
+        
+                            const docRef = db.collection('test').doc(this.state.user).set(
+                                {
+                                    array:[
+                                        {
+                                            prediction:,
+                                            user:this.state.user,
+                                            test:'autism'
+                                        }
+                                    ]
+                                    
+                                })
+        
+                            
+                        } else {
+                            console.log('Document data:', doc.data());
+                            console.log( doc.data().array);
+                            var newarr=doc.data().array;
+                            newarr.push({
+                                    
+                                            prediction:,
+                                            user:this.state.user,
+                                            test:'autism'
+                            })
+        
+                            const docRef = db.collection('test').doc(this.state.user).set(
+                                {
+                                    array:newarr,
+                                    
+                                })
+                            
+                        }
+                    })
+                    .catch(err => {
+                        console.log('Error getting document', err);
+                    });
+                
+            //  const db = firebase.firestore();
+                // const docRef = db.collection('test').doc(this.state.user).set({
+                //     // prediction:this.state.prediction,
+                //     user:this.state.user,
+                //     test:'autism'
+                // })
                 // console.log(predict);
            
     }
