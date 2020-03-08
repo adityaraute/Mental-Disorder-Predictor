@@ -52,7 +52,7 @@ class Autism extends Component {
             const db = firebase.firestore();
             const docRef = db.collection('test').doc().set({
                 autism:this.state.pred,
-                user:'rj8228',
+                user:this.state.user,
             })
 
     }
