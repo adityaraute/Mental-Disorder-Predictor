@@ -10,6 +10,7 @@ class Autism extends Component {
         this.formSub = this.formSub.bind(this);
         this.state = {
             pred:'',
+            user: props.user
 
         };
         this.questions = ["1)Does your child look at you when you call his/her name?", "2)How easy is it for you to get eye contact with your child?",
@@ -35,7 +36,6 @@ class Autism extends Component {
                 //handle success
                 console.log(response);
                 console.log("autism prediction", response.data.results.prediction);
-               
                 this.setState({
                     pred:response.data.results.prediction,
                  })
@@ -63,7 +63,7 @@ class Autism extends Component {
     }
 
     componentDidMount() {
-        console.log('Aut');
+        console.log(this.state);
     }
     render() {
         return (

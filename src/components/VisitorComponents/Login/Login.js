@@ -39,7 +39,13 @@ class Login extends Component {
                     this.setState({ tagline: string })
                 } else {
                     console.log('Document data:', doc.data());
-                    this.setState({ p: <Redirect to='/user' /> })
+                    let string = this.state.username
+                    this.setState({ p: <Redirect to={{
+                        pathname : '/user/',
+                        state: {
+                            user: string
+                        }
+                    }} /> })
                 }
             })
             .catch(err => {
