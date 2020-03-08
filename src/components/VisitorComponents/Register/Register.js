@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import firebase from '../../../firebase';
+import firebase from '../../../Firebase';
 import classes from './Register.module.css';
 import TextField from '@material-ui/core/TextField';
 import { Button } from '@material-ui/core';

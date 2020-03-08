@@ -17,10 +17,10 @@ class Landing extends Component{
                         </div>
                         
                         <div className={classes.text2}>
-                       <h1> Easy Online Prediction for Cognitive Disorders</h1>
+                       <h1 class="display-1"> Easy Online Prediction for Cognitive Disorders</h1>
                         </div>
                         <div className={classes.text3}>
-                        <h3>AUTISM | DYSLEXIA | COLOUR BLINDNESS</h3>
+                        <h3 class="display-4">AUTISM | DYSLEXIA | COLOUR BLINDNESS</h3>
                         </div>
                     </div>
                     {/* section 2 -------------------------------------------------------------------------------------------------------------------------*/}
