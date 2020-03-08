@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import classes from './Landing.module.css';
 import {Link } from 'react-router-dom';
-
 class Landing extends Component{
     componentDidMount(){
         console.log('landing'); 
