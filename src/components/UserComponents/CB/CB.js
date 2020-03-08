@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Auxiliary from '../../../containers/Auxiliary/Auxiliary';
 import classes from './CB.module.css';
+import {  Container } from '@material-ui/core';
+
 
 class CB extends Component {
     constructor(props) {
@@ -12,7 +14,8 @@ class CB extends Component {
         this.counter = 0;
         this.imgpath = "../../../Assets/plates/ishihara";
         this.attempted = [];
-        this.current = 0;
+        this.current =0;
+        this.correct=0;
     }
     // 0-7 circle, 8-15 diamond, 16-24 rectangle, 25-31 triangle
     changehandler = (e) => {
@@ -21,16 +24,32 @@ class CB extends Component {
         });
     }
     submitHandler = (e) => {
+        var ans= e.target.id;
+        if(ans == 'circ' && (this.current>=0 && this.current<=8 )){
+            this.correct+=1
+        }
+        else if(ans == 'diam' && (this.current>=8 && this.current<=15)){
+            this.correct+=1
+        }
+        else if(ans == 'rect' && (this.current>=16 && this.current<=24)){
+            this.correct+=1
+        }
+        else if(ans == 'tria' && (this.current>=25 && this.current<=31)){
+            this.correct+=1
+        }
+        console.log(this.correct);
         this.setState({ answer: this.counter })
+        if(this.counter>13){
+            
+        }
     }
     formSub = (e) => {
         e.preventDefault();
     }
     componentDidMount() {
-
     }
     render() {
-        if (this.counter < 10) {
+        if (this.counter < 14) {
             let k = this.current
             let p = 0
             while (this.attempted.includes(k)) {
@@ -75,30 +94,33 @@ class CB extends Component {
                 case 30: image = require('../../../Assets/plates/ishihara30.svg');break;
                 default: image = require('../../../Assets/plates/ishihara31.svg');break;
             }
-            console.log(k, image);
-            
+            // console.log(k, image);
             return (
-                <Auxiliary>
+                <Container>
                     <form onSubmit={this.formSub}>
                         <h5>CB questions</h5>
                         <div>
-
                             <img src={image} alt={image} className={classes.quesImg}></img>
+                            <button variant="contained" id="rect" color="primary" onClick={this.submitHandler}>Rectangle</button>
+                            <button variant="contained" id="circ" color="primary" onClick={this.submitHandler}>Circle</button> 
+                            <button variant="contained" id="tria" color="primary" onClick={this.submitHandler}>Triangle</button> 
+                            <button variant="contained" id="diam" color="primary" onClick={this.submitHandler}>Diamond</button>
+                            <button variant="contained" id="nope" color="primary" onClick={this.submitHandler}>Cannot Understand</button> 
                         </div>
-                        <button onClick={this.submitHandler}>Next!</button>
                     </form>
 
                     {/* <div style={{backgroundColor:"#000"}}> */}
                     {/* <img src={ require("../../../Assets/plates/ishihara.svg")} alt="rect"></img> */}
                     {/* </div> */}
-                </Auxiliary>
+                </Container>
             )
         }
         else {
             return (
-                <Auxiliary>
+                <Container>
                     <h6>Test done</h6>
-                </Auxiliary>
+                    <h4>{this.correct}</h4>
+                </Container>
             )
         }
 

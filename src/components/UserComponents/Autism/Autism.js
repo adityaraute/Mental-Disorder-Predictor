@@ -10,17 +10,13 @@ class Autism extends Component {
         this.formSub = this.formSub.bind(this);
         this.state = {
             user: props.user
-
         };
         this.questions = ["1)Does your child look at you when you call his/her name?", "2)How easy is it for you to get eye contact with your child?",
             "3)Does your child point to indicate that s/he wants something? (e.g. a toy that is out of reach)", "4)Does your child point to share interest with you? (e.g. pointing at an interesting sight)",
             "5)Does your child pretend? (e.g. care for dolls, talk on a toy phone)", "6)Does your child follow where you’re looking?",
             "7)If you or someone else in the family is visibly upset, does your child show signs of wanting to comfort them? (e.g. stroking hair, hugging them)", "8)Would you describe your child’s first words as:",
             " 9)Does your child use simple gestures? (e.g. wave goodbye)", "10)Does your child stare at nothing with no apparent purpose?"]
-        this.prediction="";
-        
-        
-
+        this.prediction = "";
     }
     formSub = (e) => {
 
@@ -38,80 +34,50 @@ class Autism extends Component {
             data: formData,
             headers: { 'Content-Type': 'multipart/form-data' }
         }).then(function (response) {
-                console.log("autism prediction", response.data.results.prediction);
-                predict = response.data.results.prediction;
-                // self.setState({prediction: "Result : "+ response.data.results.prediction    })//= "Result : "+ response.data.results.prediction;       
-                console.log(predict);
-                self.setState({prediction:predict});         
-                console.log(this.state);
-                console.log(self.state);
-            })
-            .catch(function (response) {           
-            });
-
-                console.log(this.state);
-
-                //fire base save into array
-
-
-
-                const db = firebase.firestore();
-                let cityRef = db.collection('test').doc(this.state.user);
-                let getDoc = cityRef.get()
-                    .then(doc => {
-                        if (!doc.exists) {
-        
-                            const docRef = db.collection('test').doc(this.state.user).set(
-                                {
-                                    array:[
-                                        {
-                                            prediction:,
-                                            user:this.state.user,
-                                            test:'autism'
-                                        }
-                                    ]
-                                    
-                                })
-        
-                            
-                        } else {
-                            console.log('Document data:', doc.data());
-                            console.log( doc.data().array);
-                            var newarr=doc.data().array;
-                            newarr.push({
-                                    
-                                            prediction:,
-                                            user:this.state.user,
-                                            test:'autism'
+            console.log("autism prediction", response.data.results.prediction);
+            predict = response.data.results.prediction;
+            self.setState({ prediction: predict });
+        }).then(function (response) {
+            const db = firebase.firestore();
+            let cityRef = db.collection('test').doc(self.state.user);
+            let getDoc = cityRef.get()
+                .then(doc => {
+                    if (!doc.exists) {
+                        const docRef = db.collection('test').doc(self.state.user).set(
+                            {
+                                array: [
+                                    {
+                                        prediction: self.state.prediction,
+                                        user: self.state.user,
+                                        test: 'autism'
+                                    }
+                                ]
                             })
-        
-                            const docRef = db.collection('test').doc(this.state.user).set(
-                                {
-                                    array:newarr,
-                                    
-                                })
-                            
-                        }
-                    })
-                    .catch(err => {
-                        console.log('Error getting document', err);
-                    });
-                
-            //  const db = firebase.firestore();
-                // const docRef = db.collection('test').doc(this.state.user).set({
-                //     // prediction:this.state.prediction,
-                //     user:this.state.user,
-                //     test:'autism'
-                // })
-                // console.log(predict);
-           
+                    } else {
+                        var newarr = doc.data().array;
+                        newarr.push({
+                            prediction: self.state.prediction,
+                            user: self.state.user,
+                            test: 'autism'
+                        });
+                        const docRef = db.collection('test').doc(self.state.user).set(
+                            {
+                                array: newarr,
+                            })
+                    }
+                })
+                .catch(err => {
+                    console.log('Error getting document', err);
+                });
+        })
+            .catch(function (response) {
+            });
+        console.log(this.state);
     }
-
     changeRadio = (e) => {
         if (e.target.value == 'always' || e.target.value == 'usually') { this.setState({ [e.target.name]: 0 }); }
         else { this.setState({ [e.target.name]: 1 }); }
     }
-
     componentDidMount() {
         console.log(this.state);
     }
