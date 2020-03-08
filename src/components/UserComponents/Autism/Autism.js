@@ -34,16 +34,13 @@ class Autism extends Component {
         })
             .then(function (response) {
                 //handle success
-                console.log(response);
                 console.log("autism prediction", response.data.results.prediction);
                 this.setState({
                     pred:response.data.results.prediction,
                  })
-                 console.log(this.state);
             })
             .catch(function (response) {
                 //handle error
-                console.log(response);
                 
             });
 
