@@ -43,12 +43,13 @@ class CB extends Component{
                         <input type="text" id="four" placeholder="Four" onChange={this.changehandler} value={this.state.four} />
                         <input type="submit" title="submit"></input>
                     </form>
-            <div style={{backgroundColor:"#000"}}>
-                <img src={ require("../../../Assets/plates/ishihara.svg")} alt="rect"></img>
-            </div>
+            {/* <div style={{backgroundColor:"#000"}}> */}
+                {/* <img src={ require("../../../Assets/plates/ishihara.svg")} alt="rect"></img> */}
+            {/* </div> */}
         </Auxiliary>
         )
     }
+    
     
 }
 export default CB;
