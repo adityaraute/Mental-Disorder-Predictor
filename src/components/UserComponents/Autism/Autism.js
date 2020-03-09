@@ -17,7 +17,7 @@ class Autism extends Component {
         this.questions = ["1) Does your child look at you when you call his/her name?", "2) How easy is it for you to get eye contact with your child?",
             "3) Does your child point to indicate that s/he wants something? (e.g. a toy that is out of reach)", "4) Does your child point to share interest with you? (e.g. pointing at an interesting sight)",
             "5) Does your child pretend? (e.g. care for dolls, talk on a toy phone)", "6) Does your child follow where you’re looking?",
-            "7) If you or someone else in the family is visibly upset, does your child show signs of wanting to comfort them? (e.g. stroking hair, hugging them)", "8) Would you describe your child’s first words as:",
+            "7) If you or someone else in the family is visibly upset, does your child show signs of wanting to comfort them? (e.g. stroking hair, hugging them)", "8) How often does the child speak meaningful words?",
             " 9) Does your child use simple gestures? (e.g. wave goodbye)", "10) Does your child stare at nothing with no apparent purpose?"]
         this.prediction = "";
     }
@@ -107,9 +107,8 @@ class Autism extends Component {
                                     <div className={classes.ques} key={index} id={index} onChange={this.changeRadio}>
                                         <div className={classes.questions}>{value}</div>
                                         <div className={classes.options}>
-                                            <div><input type="radio" name={index} value="always" style={{height:"3rem", width:"1rem", float:"left", marginRight:"1rem"}} />Always</div>
+                                            <div><input type="radio" name={index} value="always" style={{height:"3rem", width:"1rem", float:"left", marginRight:"1rem"}} required/>Always</div>
                                             <div><input type="radio" name={index} value="usually" style={{height:"3rem", width:"1rem", float:"left", marginRight:"1rem"}} />Usually</div>
-                                            
                                             <div><input type="radio" name={index} value="sometimes"  style={{height:"3rem", width:"1rem", float:"left", marginRight:"1rem"}}/>Sometimes</div>
                                             <div><input type="radio" name={index} value="rarely"  style={{height:"3rem", width:"1rem", float:"left", marginRight:"1rem"}}/>Rarely</div>
                                             <div><input type="radio" name={index} value="never" style={{height:"3rem", width:"1rem", float:"left", marginRight:"1rem"}} />Never</div>

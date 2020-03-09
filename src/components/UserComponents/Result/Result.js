@@ -61,7 +61,7 @@ class Result extends Component {
             return (
                 <Container>
                 <div>
-                    Result
+                    Result  (oldest attempt first)
                     <div className={classes.card}>
                     <TableContainer component={Paper}>
                         <Table className={classes.table} aria-label="simple table">
