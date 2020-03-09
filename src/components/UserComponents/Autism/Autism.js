@@ -17,7 +17,7 @@ class Autism extends Component {
         this.questions = ["1) Does your child look at you when you call his/her name?", "2) How easy is it for you to get eye contact with your child?",
             "3) Does your child point to indicate that s/he wants something? (e.g. a toy that is out of reach)", "4) Does your child point to share interest with you? (e.g. pointing at an interesting sight)",
             "5) Does your child pretend? (e.g. care for dolls, talk on a toy phone)", "6) Does your child follow where you’re looking?",
-            "7) If you or someone else in the family is visibly upset, does your child show signs of wanting to comfort them? (e.g. stroking hair, hugging them)", "8) Would you describe your child’s first words as:",
+            "7) If you or someone else in the family is visibly upset, does your child show signs of wanting to comfort them? (e.g. stroking hair, hugging them)", "8) How often does the child speak meaningful words?",
             " 9) Does your child use simple gestures? (e.g. wave goodbye)", "10) Does your child stare at nothing with no apparent purpose?"]
         this.prediction = "";
     }
