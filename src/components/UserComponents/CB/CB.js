@@ -10,7 +10,8 @@ class CB extends Component {
         super(props);
         this.state = {
             user: props.user,
-            answer: ''
+            answer: '',
+            route:false
         };
         this.counter = 0;
         this.imgpath = "../../../Assets/plates/ishihara";
@@ -77,6 +78,9 @@ class CB extends Component {
                                 array: newarr,
                             })
                     }
+                    self.setState({route: true});
+                    console.log(self.state);
+                    
                 })
                 .catch(err => {
                     console.log('Error getting document', err);
@@ -89,7 +93,13 @@ class CB extends Component {
     componentDidMount() {
     }
     render() {
-        if (this.counter < 14) {
+        if(!this.state.route){
+            return(
+                <div>
+                <Redirect to="/user/result" />
+                </div>)
+        }
+        else if (this.counter < 14) {
             let k = this.current
             let p = 0
             while (this.attempted.includes(k)) {
@@ -160,13 +170,10 @@ class CB extends Component {
             )
         }
         else {
-            return (
-                <Container>
-                    <h6>Test done</h6>
-                    <h4>{this.correct}</h4>
-                    <Redirect to="/user/result" />
-                </Container>
-            )
+            return(
+            <div>
+            <Redirect to="/user/result" />
+            </div>)
         }
 
     }

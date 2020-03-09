@@ -107,9 +107,8 @@ class Autism extends Component {
                                     <div className={classes.ques} key={index} id={index} onChange={this.changeRadio}>
                                         <div className={classes.questions}>{value}</div>
                                         <div className={classes.options}>
-                                            <div><input type="radio" name={index} value="always" style={{height:"3rem", width:"1rem", float:"left", marginRight:"1rem"}} />Always</div>
+                                            <div><input type="radio" name={index} value="always" style={{height:"3rem", width:"1rem", float:"left", marginRight:"1rem"}} required/>Always</div>
                                             <div><input type="radio" name={index} value="usually" style={{height:"3rem", width:"1rem", float:"left", marginRight:"1rem"}} />Usually</div>
-                                            
                                             <div><input type="radio" name={index} value="sometimes"  style={{height:"3rem", width:"1rem", float:"left", marginRight:"1rem"}}/>Sometimes</div>
                                             <div><input type="radio" name={index} value="rarely"  style={{height:"3rem", width:"1rem", float:"left", marginRight:"1rem"}}/>Rarely</div>
                                             <div><input type="radio" name={index} value="never" style={{height:"3rem", width:"1rem", float:"left", marginRight:"1rem"}} />Never</div>
