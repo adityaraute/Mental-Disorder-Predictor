@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import classes from './Autism.module.css';
 import firebase from '../../../firebase';
+import {Redirect} from 'react-router-dom';
 
 
 
@@ -10,7 +11,8 @@ class Autism extends Component {
         super(props);
         this.formSub = this.formSub.bind(this);
         this.state = {
-            user: props.user
+            user: props.user,
+            route: false
         };
         this.questions = ["1) Does your child look at you when you call his/her name?", "2) How easy is it for you to get eye contact with your child?",
             "3) Does your child point to indicate that s/he wants something? (e.g. a toy that is out of reach)", "4) Does your child point to share interest with you? (e.g. pointing at an interesting sight)",
@@ -59,13 +61,16 @@ class Autism extends Component {
                         newarr.push({
                             prediction: self.state.prediction,
                             user: self.state.user,
-                            test: 'autism'
+                            test: 'Autism'
                         });
                         const docRef = db.collection('test').doc(self.state.user).set(
                             {
                                 array: newarr,
                             })
                     }
+                    self.setState({route: true});
+                    console.log(self.state);
+                    
                 })
                 .catch(err => {
                     console.log('Error getting document', err);
@@ -83,44 +88,52 @@ class Autism extends Component {
         console.log(this.state);
     }
     render() {
-        return (
-            <div className={classes.mainDiv}>
-                <form onSubmit={this.formSub} className={classes.form}>
-                    <div className={classes.header}>
-                    <h5>Autism Test</h5>
-                    <div><img src={require("../../../Assets/autismtest.jpg")} className={classes.medicaltest}></img></div>
-                    
-                    <h6>Kindly Fill Out The Form</h6>
-                    <p>>>>></p>
-                    <div className={classes.lightsphere}><img src={require("../../../Assets/lightsphere.png")}></img></div>
-                    <div className={classes.darksphere}><img src={require("../../../Assets/lightsphere.png")}></img>
-     
-                    </div>
-                    </div>
-                    <div className={classes.questionZone}>
-                        {this.questions.map((value, index) => {
-                            return (
-                                <div className={classes.ques} key={index} id={index} onChange={this.changeRadio}>
-                                    <div className={classes.questions}>{value}</div>
-                                    <div className={classes.options}>
-                                        <div><input type="radio" name={index} value="always" style={{height:"3rem", width:"1rem", float:"left", marginRight:"1rem"}} />Always</div>
-                                        <div><input type="radio" name={index} value="usually" style={{height:"3rem", width:"1rem", float:"left", marginRight:"1rem"}} />Usually</div>
-                                        
-                                        <div><input type="radio" name={index} value="sometimes"  style={{height:"3rem", width:"1rem", float:"left", marginRight:"1rem"}}/>Sometimes</div>
-                                        <div><input type="radio" name={index} value="rarely"  style={{height:"3rem", width:"1rem", float:"left", marginRight:"1rem"}}/>Rarely</div>
-                                        <div><input type="radio" name={index} value="never" style={{height:"3rem", width:"1rem", float:"left", marginRight:"1rem"}} />Never</div>
-                                    </div>
-                                    <br />
-                                </div>)
-                        })}
+        if(!this.state.route){
+            return (
+                <div className={classes.mainDiv}>
+                    <form onSubmit={this.formSub} className={classes.form}>
+                        <div className={classes.header}>
+                        <h5>Autism Test</h5>
+                        <div><img src={require("../../../Assets/autismtest.jpg")} className={classes.medicaltest}></img></div>
+                        <h6>Kindly Fill Out The Form</h6>
+                        <p>>>>></p>
+                        <div className={classes.lightsphere}><img src={require("../../../Assets/lightsphere.png")}></img></div>
+                        <div className={classes.darksphere}><img src={require("../../../Assets/lightsphere.png")}></img>
+                        </div>
+                        </div>
+                        <div className={classes.questionZone}>
+                            {this.questions.map((value, index) => {
+                                return (
+                                    <div className={classes.ques} key={index} id={index} onChange={this.changeRadio}>
+                                        <div className={classes.questions}>{value}</div>
+                                        <div className={classes.options}>
+                                            <div><input type="radio" name={index} value="always" style={{height:"3rem", width:"1rem", float:"left", marginRight:"1rem"}} />Always</div>
+                                            <div><input type="radio" name={index} value="usually" style={{height:"3rem", width:"1rem", float:"left", marginRight:"1rem"}} />Usually</div>
+                                            
+                                            <div><input type="radio" name={index} value="sometimes"  style={{height:"3rem", width:"1rem", float:"left", marginRight:"1rem"}}/>Sometimes</div>
+                                            <div><input type="radio" name={index} value="rarely"  style={{height:"3rem", width:"1rem", float:"left", marginRight:"1rem"}}/>Rarely</div>
+                                            <div><input type="radio" name={index} value="never" style={{height:"3rem", width:"1rem", float:"left", marginRight:"1rem"}} />Never</div>
+                                        </div>
+                                        <br />
+                                    </div>)
+                            })}
+                            
+                        <input type="submit" title="submit" ></input>
+                        <h2>{this.state.prediction}
+                        {this.state.route}
+                        </h2>
+                        </div>
                         
-                    <input type="submit" title="submit" ></input>
-                    <h2>{this.state.prediction}</h2>
-                    </div>
-                    
-                </form>
-            </div>
-        )
+                    </form>
+                </div>
+            )
+        }else{
+            return(
+            <div>
+            <Redirect to="/user/result" />
+            </div>)
+        }
+        
     }
 }
 export default Autism;
