@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import classes from './Dashboard.module.css';
+import {Container} from '@material-ui/core';
 class Dashboard extends Component {
     constructor(props) {
         super(props)
@@ -10,7 +11,7 @@ class Dashboard extends Component {
 
     render() {
         return (
-            <div>
+            <Container style={{marginTop: '2rem'}}>
                 {/* { this.state.page ?  <Login /> : <Register />}
                     <button onClick={this.change_mode}>Change</button> */}
                 <div className={classes.hero}>
@@ -22,7 +23,7 @@ class Dashboard extends Component {
                     </div>
                 </div>
 
-            </div>
+            </Container>
         )
     }
 }

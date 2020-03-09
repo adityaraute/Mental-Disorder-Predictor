@@ -120,6 +120,7 @@ position: absolute;
 z-index: -3;
 background-attachment: scroll;
 
+
 }
 /*Know more box*/
 .infobox
@@ -128,7 +129,7 @@ background-attachment: scroll;
     background-size: 100% 100%;
     float:left;
     margin-top:5vw;
-    margin-left:7vw;
+    margin-left:15vw;
     border : 0.2vw solid #02353c ;
     border-radius: 1.3vw;
     color: #ccc;
@@ -147,7 +148,7 @@ background-attachment: scroll;
     background-attachment: scroll;
     float: right;
     margin-top:5vw;
-    margin-right:5vw;
+    margin-right:15vw;
     border : 0.2vw solid #02353c ;
     border-radius: 1vw;
     color: #ccc;

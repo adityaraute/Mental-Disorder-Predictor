@@ -50,7 +50,7 @@ class Autism extends Component {
                                     {
                                         prediction: self.state.prediction,
                                         user: self.state.user,
-                                        test: 'autism'
+                                        test: 'Autism'
                                     }
                                 ]
                             })

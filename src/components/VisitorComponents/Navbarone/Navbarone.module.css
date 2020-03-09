@@ -4,6 +4,8 @@
     color:#02353c;
     padding: 1rem;
     font-size: larger;
+    text-transform: uppercase;
+    font-weight: 625;
 }
 .ul_li{
     display: flex;
@@ -18,7 +20,6 @@
 }
 link
 {
-
     background-color: #02353c;
 }
 div a.my-active{
@@ -34,4 +35,6 @@ div a.my-active{
     transform: scale(1.2);
     transition: 0.2s all linear;
     cursor: pointer;
+    text-decoration: none   ;
+
 }
