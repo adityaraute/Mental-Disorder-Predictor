@@ -60,7 +60,7 @@ class CB extends Component {
                                         prediction: self.state.prediction,
                                         correct : this.correct,
                                         user: self.state.user,
-                                        test: 'CB'
+                                        test: 'Colour Blindness'
                                     }
                                 ]
                             })
@@ -70,7 +70,7 @@ class CB extends Component {
                             prediction: self.state.prediction,
                             correct : this.correct,
                             user: self.state.user,
-                            test: 'CB'
+                            test: 'Colour Blindness'
                         });
                         const docRef = db.collection('test').doc(self.state.user).set(
                             {

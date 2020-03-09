@@ -1,0 +1,129 @@
+
+
+.form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+
+}
+
+.header{
+    background-color: teal;
+    align-items: center;
+   text-align: center;
+   z-index:-2;
+
+}
+.header h5{
+    font-size: 5rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    color: white;
+}
+
+.header h6{
+    font-size: 2rem;
+    margin-top: 5rem;
+    float:left;
+    margin-left: 15rem;
+    color: white;
+    
+}
+
+.header p{
+    font-size: 2rem;
+    margin-top: 5rem;
+    margin-left: 0;
+    color: white;
+}
+.header img{
+    border-radius: 75%;
+    max-width:75%;
+    height: auto;
+ 
+    filter: drop-shadow(0px 5px 3px #02353c ) 
+}
+.lightsphere{
+    position:absolute;
+    top:100px;
+    left:-150px;
+    z-index:-1;
+    opacity:0.3;
+    color: white;
+    height: auto;
+    
+}
+.darksphere{
+    position: absolute;;
+    top:200px;
+    left:250px;
+    z-index:-2;
+    opacity:0.5;
+    height: 50px;
+    
+}
+
+.questionZone{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow-y: scroll;
+   
+    background-color:white;
+    
+    padding: 20px;
+}
+
+.options{
+    font-size: 1.5rem;
+    
+    display: grid;
+    width:70%;
+    color: teal;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    margin-top:1rem;
+
+   
+}
+
+.options input{
+
+    margin-right: 0 ;
+}
+
+.questions{
+
+    font-size: 2rem;
+    color:  teal;
+    
+}
+
+.questionZone input {
+  border-radius: 4px;
+  background-color: #2d9685;
+  
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+ margin: 5px;
+  text-align: center;
+}
+
+
+
+
+
+.questionZone input:hover {
+  padding-right: 25px;
+  width:250px;
+}
+
