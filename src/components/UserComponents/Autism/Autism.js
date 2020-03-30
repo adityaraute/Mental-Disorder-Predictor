@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import classes from './Autism.module.css';
-import firebase from '../../../fireba';
+import firebase from '../../../config';
 import {Redirect} from 'react-router-dom';
 
 

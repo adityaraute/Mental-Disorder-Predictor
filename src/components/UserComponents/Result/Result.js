@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import firebase from '../../../fireba';
+import firebase from '../../../config';
 import classes from './Result.module.css';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
