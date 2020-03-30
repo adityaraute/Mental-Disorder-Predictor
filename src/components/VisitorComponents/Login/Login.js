@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import firebase from '../../../firebase.js';
+import firebase from '../../../fireba';
 import { Redirect } from 'react-router-dom';
 import TextField from '@material-ui/core/TextField';
 import Container from '@material-ui/core/Container';

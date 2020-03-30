@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Auxiliary from '../../../containers/Auxiliary/Auxiliary';
 import classes from './CB.module.css';
 import { Container } from '@material-ui/core';
-import firebase from '../../../firebase';
+import firebase from '../../../fireba';
 import {Redirect} from 'react-router-dom';
 
 class CB extends Component {
