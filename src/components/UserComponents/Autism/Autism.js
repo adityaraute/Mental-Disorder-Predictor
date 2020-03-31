@@ -31,6 +31,8 @@ class Autism extends Component {
             formData.set('q' + (i + 1), this.state[i]);
         }
         formData.append('q10', Math.abs(this.state[9] - 1));
+        console.log(formData);
+        
         var self = this;
         axios({
             method: 'post',
@@ -46,7 +48,7 @@ class Autism extends Component {
             if (self.state.pred1 === "No") {
                 self.setState({ prediction: "No" })
             }
-            else if (self.state.complimentary === "No") {
+            else if (self.state.complimentary === 0) {
                 self.setState({ prediction: "Possible Yes" })
             }
             else {
@@ -62,7 +64,7 @@ class Autism extends Component {
                                     {
                                         predictionone: self.state.pred1,
                                         predictiontwo: self.state.complimentary,
-                                        finalpredition: self.state.prediction,
+                                        prediction: self.state.prediction,
                                         user: self.state.user,
                                         test: 'Autism'
                                     }
@@ -73,7 +75,7 @@ class Autism extends Component {
                         newarr.push({
                             predictionone: self.state.pred1,
                             predictiontwo: self.state.complimentary,
-                            finalpredition: self.state.prediction,
+                            prediction: self.state.prediction,
                             user: self.state.user,
                             test: 'Autism'
                         });
@@ -99,20 +101,12 @@ class Autism extends Component {
         e.preventDefault();
         // let predict;
         var formData = new FormData();
-        console.log(this.state.two,this.state.one);
-        formData.set('q1', '1');
-        formData.set('q2', '2');
-        console.log(formData);
+        formData.set('q1', this.state.one);
+        formData.set('q2', this.state.two);
         formData.set('q3', this.state.three);
         formData.set('q4', this.state.four);
         formData.set('q5', this.state.five);
         formData.set('q6', this.state.six);
-        console.log(this.state);
-
-        console.log(formData);
-       
-        console.log(formData);
-
         var self = this;
         self.setState({ route: 1 });
 

@@ -45,7 +45,7 @@ class Result extends Component {
         if (this.state.results) {
             this.autism = this.state.results.map((el, index) =>
                 // <div>{el.test} - {el.prediction}</div>
-                <TableRow key={el.test}>
+                <TableRow key={index}>
                 <TableCell component="th" scope="row" align="center">
                     {el.test}
                 </TableCell>

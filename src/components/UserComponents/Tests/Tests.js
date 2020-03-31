@@ -59,7 +59,7 @@ class Tests extends Component {
      render() {
        let details=this.state.test1.map(Test2 =>{
            return(
-            <Col sm="4">
+            <Col sm="4" key={Test2}>
             <Cards  details={Test2} />
         </Col>
            )
