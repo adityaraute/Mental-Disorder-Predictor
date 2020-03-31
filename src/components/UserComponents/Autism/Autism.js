@@ -25,10 +25,10 @@ class Autism extends Component {
     formSub = (e) => {
 
         e.preventDefault();
-        let predict;
+        // let predict;
         var formData = new FormData();
         for (let i = 0; i < 9; i++) {
-            formData.append('q' + (i + 1), this.state[i]);
+            formData.set('q' + (i + 1), this.state[i]);
         }
         formData.append('q10', Math.abs(this.state[9] - 1));
         var self = this;
@@ -39,7 +39,7 @@ class Autism extends Component {
             headers: { 'Content-Type': 'multipart/form-data' }
         }).then(function (response) {
             // console.log("autism prediction", response.data.results.prediction);
-            predict = response.data.results.prediction;
+            let predict = response.data.results.prediction;
             self.setState({ pred1: predict });
         }).then(function (response) {
             const db = firebase.firestore();
@@ -97,14 +97,21 @@ class Autism extends Component {
     formSub2 = (e) => {
 
         e.preventDefault();
-        let predict;
+        // let predict;
         var formData = new FormData();
-        formData.append('q1', parseInt( this.state.txtone));
-        formData.append('q2', parseInt(this.state.txttwo));
-        formData.append('q3', parseInt(this.state.txtthree));
-        formData.append('q4', parseInt(this.state.txtfour));
-        formData.append('q5',parseInt( this.state.txtfive));
-        formData.append('q6', parseInt(this.state.txtsix));
+        console.log(this.state.two,this.state.one);
+        formData.set('q1', '1');
+        formData.set('q2', '2');
+        console.log(formData);
+        formData.set('q3', this.state.three);
+        formData.set('q4', this.state.four);
+        formData.set('q5', this.state.five);
+        formData.set('q6', this.state.six);
+        console.log(this.state);
+
+        console.log(formData);
+       
+        console.log(formData);
 
         var self = this;
         self.setState({ route: 1 });
@@ -115,8 +122,8 @@ class Autism extends Component {
             data: formData,
             headers: { 'Content-Type': 'multipart/form-data' }
         }).then(function (response) {
-            // console.log("autism prediction", response.data.results.prediction);
-            predict = response.data.results.prediction;
+            console.log("autism prediction", response.data.results.prediction);
+            let predict = response.data.results.prediction;
             self.setState({ complimentary: predict });
             self.setState({ route: 1 });
 
@@ -158,6 +165,7 @@ class Autism extends Component {
             // });
             // })
             .catch(function (response) {
+                console.log(response);
             });
         console.log(this.state);
     }
@@ -197,27 +205,27 @@ class Autism extends Component {
                         <div>
                             <div>
                                 <div>Month of Birth (in number)</div>
-                                <input id="one" type="number" value={this.state.txtone} onChange={this.changeform2} />
+                                <input id="one" type="number" value={this.state.txtone} onChange={this.changeform2} required/>
                             </div>
                             <div>
                                 <div>Mother Age at Birth (in years)</div>
-                                <input id="two" type="number" value={this.state.txttwo} onChange={this.changeform2} />
+                                <input id="two" type="number" value={this.state.txttwo} onChange={this.changeform2} required/>
                             </div>
                             <div>
                                 <div>Father Age at Birth(in years)</div>
-                                <input id="three" type="number" value={this.state.txtthree} onChange={this.changeform2} />
+                                <input id="three" type="number" value={this.state.txtthree} onChange={this.changeform2} required/>
                             </div>
                             <div>
                                 <div>Birth Weight (10 grams)</div>
-                                <input id="four" type="number" value={this.state.txtfour} onChange={this.changeform2} />
+                                <input id="four" type="number" value={this.state.txtfour} onChange={this.changeform2} required/>
                             </div>
                             <div>
                                 <div>Gestational Age</div>
-                                <input id="five" type="number" value={this.state.txtfive} onChange={this.changeform2} />
+                                <input id="five" type="number" value={this.state.txtfive} onChange={this.changeform2} required/>
                             </div>
                             <div>
                                 <div>Number of Births</div>
-                                <input id="six" type="number" value={this.state.txtsix} onChange={this.changeform2} />
+                                <input id="six" type="number" value={this.state.txtsix} onChange={this.changeform2} required/>
                             </div>
                             <input type="submit" title="submit" ></input>
                             {/* <h2>{this.state.prediction}
