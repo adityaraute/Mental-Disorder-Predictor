@@ -93,7 +93,7 @@ class CB extends Component {
     componentDidMount() {
     }
     render() {
-        if(!this.state.route){
+        if(this.state.route){
             return(
                 <div>
                 <Redirect to="/user/result" />
