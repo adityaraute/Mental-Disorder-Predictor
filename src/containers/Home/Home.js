@@ -5,7 +5,7 @@ import Auxiliary from '../Auxiliary/Auxiliary';
 import Info from '../../components/VisitorComponents/Info/Info';
 import Landing from '../../components/VisitorComponents/Landing/Landing';
 // import classes from './Home.module.css';
-import { Route , Switch} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 // import firebase from '../../firebase';
 

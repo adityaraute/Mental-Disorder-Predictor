@@ -8,7 +8,7 @@ import Autism from '../../components/UserComponents/Autism/Autism';
 import Dyslexia from '../../components/UserComponents/Dyslexia/Dyslexia';
 import CB from '../../components/UserComponents/CB/CB';
 // import classes from './Home.module.css';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 // import firebase from '../../firebase';
 
