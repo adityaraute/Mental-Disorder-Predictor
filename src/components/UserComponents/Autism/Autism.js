@@ -8,6 +8,8 @@ class Autism extends Component {
     constructor(props) {
         super(props);
         this.formSub = this.formSub.bind(this);
+        this.formSub2 = this.formSub2.bind(this);
+
         this.state = {
             user: props.user,
             route: 0,
