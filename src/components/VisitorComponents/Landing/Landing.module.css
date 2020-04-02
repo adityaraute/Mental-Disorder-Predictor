@@ -35,8 +35,14 @@
     color: #dcf7f7;
     width: 100%;
     padding-top:5rem;
+   
     
 
+}
+@media (max-width:400px) {
+      .text3{
+        display: none;
+      }
 }
 
 /*for overlay on image*/
