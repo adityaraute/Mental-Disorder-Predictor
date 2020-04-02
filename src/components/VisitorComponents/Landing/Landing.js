@@ -20,7 +20,7 @@ class Landing extends Component{
                        <h1 class="display-2"> Easy Online Prediction for Cognitive Disorders</h1>
                         </div>
                         <div className={classes.text3}>
-                        <h3 class="display-4">AUTISM | DYSLEXIA | COLOUR BLINDNESS</h3>
+                        <h3 class="display-4">AUTISM | COLOUR BLINDNESS</h3>
                         </div>
                     </div>
                     {/* section 2 -------------------------------------------------------------------------------------------------------------------------*/}
@@ -64,14 +64,14 @@ class Landing extends Component{
                             </div><br></br><br></br><br></br><br></br>
                             <Link to="/info#autism" ><a  class={classes.button2}><span>Know More</span></a></Link>
                         </div>
-                        <div className={classes.infobox2}>
+                        {/* <div className={classes.infobox2}>
                             
                             <div className={classes.backoverlay2}></div>
                             <div className={classes.text1}>
                             DYSLEXIA
                             </div><br></br><br></br><br></br><br></br>
                             <Link to="/info#dyslexia" ><a href="" class={classes.button2}><span>Know More</span></a></Link>
-                        </div>
+                        </div> */}
                         <div className={classes.infobox3}>
                             
                             <div className={classes.backoverlay2}></div>

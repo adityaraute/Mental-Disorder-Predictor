@@ -25,13 +25,13 @@ class Tests extends Component {
                     img:img1,
                     link: "/user/autism"
                 }, 
-                {
-                    name: "Dyslexia",
+                // {
+                //     name: "Dyslexia",
                     
-                    description: "Test for Dyslexia in Toddlers",
-                    img:img2,
-                    link: "/user/dyslexia"
-                }, 
+                //     description: "Test for Dyslexia in Toddlers",
+                //     img:img2,
+                //     link: "/user/dyslexia"
+                // }, 
                 {
                     name: "Colour Blindness",
                     
