@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Cards from './cards'; 
 import {Container, Row, Col} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import classes from './Tests.module.css'
-import Autism from '../Autism/Autism';
+// import Autism from '../Autism/Autism';
 import img3 from '../../../Assets/colour.jpeg';
 import img1 from '../../../Assets/autism.jpg';
 import img2 from '../../../Assets/dyslexia.jpg';

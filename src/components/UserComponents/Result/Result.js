@@ -32,7 +32,7 @@ class Result extends Component {
                         // console.log(element);
                         // console.log(element.prediction);
                         // console.log(element.test);
-                        if (element.test == 'Colour Blindness') console.log(element.correct);
+                        if (element.test === 'Colour Blindness') console.log(element.correct);
                     });
                 }
             })
@@ -41,44 +41,44 @@ class Result extends Component {
             });
     }
     render() {
-        
+
         if (this.state.results) {
             this.autism = this.state.results.map((el, index) =>
                 // <div>{el.test} - {el.prediction}</div>
                 <TableRow key={index}>
-                <TableCell component="th" scope="row" align="center">
-                    {el.test}
-                </TableCell>
-                <TableCell component="th" scope="row" align="center">
-                    {el.prediction}
-                </TableCell>
-                {/* <TableCell align="right">{el.test}</TableCell>
+                    <TableCell component="th" scope="row" align="center">
+                        {el.test}
+                    </TableCell>
+                    <TableCell component="th" scope="row" align="center">
+                        {el.prediction}
+                    </TableCell>
+                    {/* <TableCell align="right">{el.test}</TableCell>
                 <TableCell align="right">{row.fat}</TableCell>
                 <TableCell align="right">{row.carbs}</TableCell>
                 <TableCell align="right">{row.protein}</TableCell> */}
-            </TableRow>
+                </TableRow>
             )
             return (
                 <Container>
-                <div>
-                    Result  (oldest attempt first)
+                    <div>
+                        Result  (oldest attempt first)
                     <div className={classes.card}>
-                    <TableContainer component={Paper}>
-                        <Table className={classes.table} aria-label="simple table">
-                            <TableHead>
-                                <TableRow>
-                                    <TableCell align="center">Test</TableCell>
-                                    <TableCell align="center">Result</TableCell>
-                                </TableRow>
-                            </TableHead>
-                            <TableBody>
-                                {this.autism}
-                            </TableBody>
-                        </Table>
-                    </TableContainer>
+                            <TableContainer component={Paper}>
+                                <Table className={classes.table} aria-label="simple table">
+                                    <TableHead>
+                                        <TableRow>
+                                            <TableCell align="center">Test</TableCell>
+                                            <TableCell align="center">Result</TableCell>
+                                        </TableRow>
+                                    </TableHead>
+                                    <TableBody>
+                                        {this.autism}
+                                    </TableBody>
+                                </Table>
+                            </TableContainer>
+                        </div>
+
                     </div>
-                   
-                </div>
                 </Container>
             )
         }

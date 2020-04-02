@@ -164,7 +164,7 @@ class Autism extends Component {
         console.log(this.state);
     }
     changeRadio = (e) => {
-        if (e.target.value == 'always' || e.target.value == 'usually') { this.setState({ [e.target.name]: 0 }); }
+        if (e.target.value === 'always' || e.target.value === 'usually') { this.setState({ [e.target.name]: 0 }); }
         else { this.setState({ [e.target.name]: 1 }); }
     }
     changeform2 = (e) => {
@@ -174,17 +174,17 @@ class Autism extends Component {
         // console.log(this.state);
     }
     render() {
-        if (this.state.route == 0) {
+        if (this.state.route === 0) {
             return (
                 <div className={classes.mainDiv}>
                     <form onSubmit={this.formSub2} className={classes.form}>
                         <div className={classes.header}>
                             <h5>Autism Test</h5>
-                            <div><img src={require("../../../Assets/autismtest.jpg")} className={classes.medicaltest}></img></div>
+                            <div><img src={require("../../../Assets/autismtest.jpg")} className={classes.medicaltest} alt="autismtest"></img></div>
                             <h6>Kindly Fill Out The Form</h6>
                             <p>>>>></p>
-                            <div className={classes.lightsphere}><img src={require("../../../Assets/lightsphere.png")}></img></div>
-                            <div className={classes.darksphere}><img src={require("../../../Assets/lightsphere.png")}></img>
+                            <div className={classes.lightsphere}><img src={require("../../../Assets/lightsphere.png")} alt="lightsphere"></img></div>
+                            <div className={classes.darksphere}><img src={require("../../../Assets/lightsphere.png")} alt="darksphere"></img>
                             </div>
                         </div>
                         {/* <div className={classes.questionZone}>
@@ -229,18 +229,18 @@ class Autism extends Component {
                     </form>
                 </div>
             )
-        } else if (this.state.route == 1) {
+        } else if (this.state.route === 1) {
 
             return (
                 <div className={classes.mainDiv}>
                     <form onSubmit={this.formSub} className={classes.form}>
                         <div className={classes.header}>
                             <h5>Autism Test</h5>
-                            <div><img src={require("../../../Assets/autismtest.jpg")} className={classes.medicaltest}></img></div>
+                            <div><img src={require("../../../Assets/autismtest.jpg")} className={classes.medicaltest} alt="autismtest"></img></div>
                             <h6>Kindly Fill Out The Form</h6>
                             <p>>>>></p>
-                            <div className={classes.lightsphere}><img src={require("../../../Assets/lightsphere.png")}></img></div>
-                            <div className={classes.darksphere}><img src={require("../../../Assets/lightsphere.png")}></img>
+                            <div className={classes.lightsphere}><img src={require("../../../Assets/lightsphere.png")} alt="lightsphere"></img></div>
+                            <div className={classes.darksphere}><img src={require("../../../Assets/lightsphere.png")} alt="darksphere"></img>
                             </div>
                         </div>
                         <div className={classes.questionZone}>
