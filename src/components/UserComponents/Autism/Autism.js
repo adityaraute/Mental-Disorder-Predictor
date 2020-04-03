@@ -31,6 +31,8 @@ class Autism extends Component {
             formData.set('q' + (i + 1), this.state[i]);
         }
         formData.append('q10', Math.abs(this.state[9] - 1));
+        console.log(formData);
+        
         var self = this;
         axios({
             method: 'post',
@@ -46,7 +48,7 @@ class Autism extends Component {
             if (self.state.pred1 === "No") {
                 self.setState({ prediction: "No" })
             }
-            else if (self.state.complimentary === "No") {
+            else if (self.state.complimentary === 0) {
                 self.setState({ prediction: "Possible Yes" })
             }
             else {
@@ -62,7 +64,7 @@ class Autism extends Component {
                                     {
                                         predictionone: self.state.pred1,
                                         predictiontwo: self.state.complimentary,
-                                        finalpredition: self.state.prediction,
+                                        prediction: self.state.prediction,
                                         user: self.state.user,
                                         test: 'Autism'
                                     }
@@ -73,7 +75,7 @@ class Autism extends Component {
                         newarr.push({
                             predictionone: self.state.pred1,
                             predictiontwo: self.state.complimentary,
-                            finalpredition: self.state.prediction,
+                            prediction: self.state.prediction,
                             user: self.state.user,
                             test: 'Autism'
                         });
@@ -98,21 +100,15 @@ class Autism extends Component {
 
         e.preventDefault();
         // let predict;
+        console.log(this.state);
+        
         var formData = new FormData();
-        console.log(this.state.two,this.state.one);
-        formData.set('q1', '1');
-        formData.set('q2', '2');
-        console.log(formData);
+        formData.set('q1', this.state.one);
+        formData.set('q2', this.state.two);
         formData.set('q3', this.state.three);
         formData.set('q4', this.state.four);
         formData.set('q5', this.state.five);
         formData.set('q6', this.state.six);
-        console.log(this.state);
-
-        console.log(formData);
-       
-        console.log(formData);
-
         var self = this;
         self.setState({ route: 1 });
 
@@ -170,7 +166,7 @@ class Autism extends Component {
         console.log(this.state);
     }
     changeRadio = (e) => {
-        if (e.target.value == 'always' || e.target.value == 'usually') { this.setState({ [e.target.name]: 0 }); }
+        if (e.target.value === 'always' || e.target.value === 'usually') { this.setState({ [e.target.name]: 0 }); }
         else { this.setState({ [e.target.name]: 1 }); }
     }
     changeform2 = (e) => {
@@ -180,17 +176,17 @@ class Autism extends Component {
         // console.log(this.state);
     }
     render() {
-        if (this.state.route == 0) {
+        if (this.state.route === 0) {
             return (
                 <div className={classes.mainDiv}>
                     <form onSubmit={this.formSub2} className={classes.form}>
                         <div className={classes.header}>
                             <h5>Autism Test</h5>
-                            <div><img src={require("../../../Assets/autismtest.jpg")} className={classes.medicaltest}></img></div>
+                            <div><img src={require("../../../Assets/autismtest.jpg")} className={classes.medicaltest} alt="autismtest"></img></div>
                             <h6>Kindly Fill Out The Form</h6>
                             <p>>>>></p>
-                            <div className={classes.lightsphere}><img src={require("../../../Assets/lightsphere.png")}></img></div>
-                            <div className={classes.darksphere}><img src={require("../../../Assets/lightsphere.png")}></img>
+                            <div className={classes.lightsphere}><img src={require("../../../Assets/lightsphere.png")} alt="lightsphere"></img></div>
+                            <div className={classes.darksphere}><img src={require("../../../Assets/lightsphere.png")} alt="darksphere"></img>
                             </div>
                         </div>
                         {/* <div className={classes.questionZone}>
@@ -202,10 +198,25 @@ class Autism extends Component {
                                         <br />
                                     </div>)
                             })} */}
-                        <div>
+                        <div className={classes.formfirst}>
                             <div>
                                 <div>Month of Birth (in number)</div>
-                                <input id="one" type="number" value={this.state.txtone} onChange={this.changeform2} required/>
+                                {/* <input id="one" type="number" value={this.state.txtone} onChange={this.changeform2} required/> */}
+                                <select onChange={this.changeform2} id ="one" className="Selection">
+                                    <option value= "1">January</option>
+                                    <option value= "2">February</option>
+                                    <option value= "3">March</option>
+                                    <option value= "4">April</option>
+                                    <option value= "5">May</option>
+                                    <option value= "6">June</option>
+                                    <option value= "7">July</option>
+                                    <option value= "8">August</option>
+                                    <option value= "9">September</option>
+                                    <option value= "10">October</option>
+                                    <option value= "11">November</option>
+                                    <option value= "12">December</option>
+
+                                </select>
                             </div>
                             <div>
                                 <div>Mother Age at Birth (in years)</div>
@@ -227,7 +238,7 @@ class Autism extends Component {
                                 <div>Number of Births</div>
                                 <input id="six" type="number" value={this.state.txtsix} onChange={this.changeform2} required/>
                             </div>
-                            <input type="submit" title="submit" ></input>
+                            <input type="submit" title="submit" className={classes.formfirstButton}></input>
                             {/* <h2>{this.state.prediction}
                                 {this.state.route}
                             </h2> */}
@@ -235,18 +246,18 @@ class Autism extends Component {
                     </form>
                 </div>
             )
-        } else if (this.state.route == 1) {
+        } else if (this.state.route === 1) {
 
             return (
                 <div className={classes.mainDiv}>
                     <form onSubmit={this.formSub} className={classes.form}>
                         <div className={classes.header}>
                             <h5>Autism Test</h5>
-                            <div><img src={require("../../../Assets/autismtest.jpg")} className={classes.medicaltest}></img></div>
+                            <div><img src={require("../../../Assets/autismtest.jpg")} className={classes.medicaltest} alt="autismtest"></img></div>
                             <h6>Kindly Fill Out The Form</h6>
                             <p>>>>></p>
-                            <div className={classes.lightsphere}><img src={require("../../../Assets/lightsphere.png")}></img></div>
-                            <div className={classes.darksphere}><img src={require("../../../Assets/lightsphere.png")}></img>
+                            <div className={classes.lightsphere}><img src={require("../../../Assets/lightsphere.png")} alt="lightsphere"></img></div>
+                            <div className={classes.darksphere}><img src={require("../../../Assets/lightsphere.png")} alt="darksphere"></img>
                             </div>
                         </div>
                         <div className={classes.questionZone}>

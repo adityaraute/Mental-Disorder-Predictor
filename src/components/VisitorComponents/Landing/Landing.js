@@ -17,10 +17,10 @@ class Landing extends Component{
                         </div>
                         
                         <div className={classes.text2}>
-                       <h1 class="display-1"> Easy Online Prediction for Cognitive Disorders</h1>
+                       <h1 class="display-2"> Easy Online Prediction for Cognitive Disorders</h1>
                         </div>
                         <div className={classes.text3}>
-                        <h3 class="display-4">AUTISM | DYSLEXIA | COLOUR BLINDNESS</h3>
+                        <h3 class="display-4">AUTISM | COLOUR BLINDNESS</h3>
                         </div>
                     </div>
                     {/* section 2 -------------------------------------------------------------------------------------------------------------------------*/}
@@ -31,7 +31,7 @@ class Landing extends Component{
                             <div className={classes.text1}>
                             Information About The Cause of Symptoms?
                             </div><br></br><br></br><br></br><br></br>
-                            <Link to="/info" ><a class={classes.button}><span>Know More</span></a></Link>
+                            <Link to="/info" ><a href="" class={classes.button}><span>Know More</span></a></Link>
                         </div>
                         <div className={classes.testbox}>
                             
@@ -39,7 +39,7 @@ class Landing extends Component{
                             <div className={classes.text1}>
                             You Know The Cause And Want To Be Sure?
                             </div><br></br><br></br><br></br><br></br>
-                            <Link to="/login" ><a class={classes.button}><span>Take the Test</span></a></Link>
+                            <Link to="/login" ><a href="" class={classes.button}><span>Take the Test</span></a></Link>
                         </div>
                         <div className={classes.text}>
                         "Only where children gather is there any real chance of fun."
@@ -62,23 +62,23 @@ class Landing extends Component{
                             <div className={classes.text1}>
                             AUTISM
                             </div><br></br><br></br><br></br><br></br>
-                            <Link to="/info#autism" ><a class={classes.button2}><span>Know More</span></a></Link>
+                            <Link to="/info#autism" ><a  class={classes.button2}><span>Know More</span></a></Link>
                         </div>
-                        <div className={classes.infobox2}>
+                        {/* <div className={classes.infobox2}>
                             
                             <div className={classes.backoverlay2}></div>
                             <div className={classes.text1}>
                             DYSLEXIA
                             </div><br></br><br></br><br></br><br></br>
-                            <Link to="/info#dyslexia" ><a class={classes.button2}><span>Know More</span></a></Link>
-                        </div>
+                            <Link to="/info#dyslexia" ><a href="" class={classes.button2}><span>Know More</span></a></Link>
+                        </div> */}
                         <div className={classes.infobox3}>
                             
                             <div className={classes.backoverlay2}></div>
                             <div className={classes.text1}>
                             COLOUR BLINDNESS
                             </div><br></br><br></br><br></br><br></br>
-                            <Link to="/info#cb" ><a class={classes.button2}><span>Know More</span></a></Link>
+                            <Link to="/info#cb" ><a  href="" class={classes.button2}><span>Know More</span></a></Link>
                         </div>
                     </div>
             </div>

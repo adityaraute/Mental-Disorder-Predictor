@@ -17,7 +17,7 @@ const info = props => {
         Indicators of autism usually appear by age 2 or 3. Some associated development delays can appear even earlier, and often, it can be diagnosed as early as 18 months. Research shows that early intervention leads to positive outcomes later in life for people with autism.
             </Typography>
         </div>
-        <div id="dyslexia">
+        {/* <div id="dyslexia">
         <Typography variant="h4"  style={{marginTop: '1rem'}}>Dyslexia</Typography>
 
         <Typography style={{textAlign: 'justify'}}>
@@ -27,7 +27,7 @@ const info = props => {
     
             </Typography>
 
-        </div>
+        </div> */}
         <div id="cb">
         <Typography variant="h4"  style={{marginTop: '1rem'}}>Colour Blindness</Typography>
             <Typography variant="h6"  style={{marginTop: '1rem'}}>Red and Green </Typography>

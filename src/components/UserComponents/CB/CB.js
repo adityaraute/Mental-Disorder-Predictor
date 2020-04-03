@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Auxiliary from '../../../containers/Auxiliary/Auxiliary';
 import classes from './CB.module.css';
 import { Container } from '@material-ui/core';
 import firebase from '../../../firebase';
@@ -27,16 +26,16 @@ class CB extends Component {
     }
     submitHandler = (e) => {
         var ans = e.target.id;
-        if (ans == 'circ' && (this.current >= 0 && this.current <= 8)) {
+        if (ans === 'circ' && (this.current >= 0 && this.current <= 8)) {
             this.correct += 1
         }
-        else if (ans == 'diam' && (this.current >= 8 && this.current <= 15)) {
+        else if (ans === 'diam' && (this.current >= 8 && this.current <= 15)) {
             this.correct += 1
         }
-        else if (ans == 'rect' && (this.current >= 16 && this.current <= 24)) {
+        else if (ans === 'rect' && (this.current >= 16 && this.current <= 24)) {
             this.correct += 1
         }
-        else if (ans == 'tria' && (this.current >= 25 && this.current <= 31)) {
+        else if (ans === 'tria' && (this.current >= 25 && this.current <= 31)) {
             this.correct += 1
         }
         console.log(this.correct);

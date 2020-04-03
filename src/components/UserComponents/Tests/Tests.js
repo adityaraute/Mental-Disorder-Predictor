@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Cards from './cards'; 
 import {Container, Row, Col} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import classes from './Tests.module.css'
-import Autism from '../Autism/Autism';
+// import Autism from '../Autism/Autism';
 import img3 from '../../../Assets/colour.jpeg';
 import img1 from '../../../Assets/autism.jpg';
 import img2 from '../../../Assets/dyslexia.jpg';
@@ -25,13 +25,13 @@ class Tests extends Component {
                     img:img1,
                     link: "/user/autism"
                 }, 
-                {
-                    name: "Dyslexia",
+                // {
+                //     name: "Dyslexia",
                     
-                    description: "Test for Dyslexia in Toddlers",
-                    img:img2,
-                    link: "/user/dyslexia"
-                }, 
+                //     description: "Test for Dyslexia in Toddlers",
+                //     img:img2,
+                //     link: "/user/dyslexia"
+                // }, 
                 {
                     name: "Colour Blindness",
                     
@@ -59,7 +59,7 @@ class Tests extends Component {
      render() {
        let details=this.state.test1.map(Test2 =>{
            return(
-            <Col sm="4">
+            <Col sm="4" key={Test2}>
             <Cards  details={Test2} />
         </Col>
            )
