@@ -49,7 +49,7 @@ class Autism extends Component {
                 self.setState({ prediction: "No" })
             }
             else if (self.state.complimentary === 0) {
-                self.setState({ prediction: "Possible Yes" })
+                self.setState({ prediction: "Possibly Yes" })
             }
             else {
                 self.setState({ prediction: "Yes" })
