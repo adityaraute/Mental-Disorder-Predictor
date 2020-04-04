@@ -13,7 +13,7 @@ class Autism extends Component {
         this.state = {
             user: props.user,
             route: 0,
-
+            one: 1,
         };
         this.questions = ["1) Does your child look at you when you call his/her name?", "2) How easy is it for you to get eye contact with your child?",
             "3) Does your child point to indicate that s/he wants something? (e.g. a toy that is out of reach)", "4) Does your child point to share interest with you? (e.g. pointing at an interesting sight)",
