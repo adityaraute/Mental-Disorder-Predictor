@@ -1,5 +1,18 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+## About
+
+This project was created as an initiative to spread awareness about mental illnesses.
+It is directed towards parents of toddlers who are skeptical about their child's mental health. 
+The project offers two tests for disorders, namely Autism and Colour Blindness. The tests are to be conducted under the guidance of a parent or a guardian.
+
+The project is deployed [http://te-proj-272720.appspot.com/](here):
+
+
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -47,13 +60,10 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-<<<<<<< HEAD
 ### Analyzing the Bundle Size
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-=======
->>>>>>> 74c9a42655ffd6dcd33bd0ed60b7756b914ec340
 ### Making a Progressive Web App
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
