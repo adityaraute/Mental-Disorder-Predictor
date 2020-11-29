@@ -7,7 +7,7 @@ This project was created as an initiative to spread awareness about mental illne
 It is directed towards parents of toddlers who are skeptical about their child's mental health. 
 The project offers two tests for disorders, namely Autism and Colour Blindness. The tests are to be conducted under the guidance of a parent or a guardian.
 
-The project is deployed [here](http://te-proj-272720.appspot.com/):
+The project is deployed [here](http://te-proj-272720.appspot.com/).
 
 
 
